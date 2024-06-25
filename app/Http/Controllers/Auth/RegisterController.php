@@ -59,6 +59,8 @@ class RegisterController extends Controller
                 'password' => bcrypt($password),
             ]);
 
+            session() -> put('username', $username);
+
             return redirect('added');
         }
         return view('auth.register');
