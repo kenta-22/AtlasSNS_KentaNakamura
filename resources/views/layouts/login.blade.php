@@ -21,17 +21,22 @@
 </head>
 <body>
     <header>
-        <div id = "head">
-        <h1><a href="http://127.0.0.1:8000/top"><img src="images/atlas.png"></a></h1>
-            <div id="">
-                <div id="">
-                    <p>〇〇さん<img src="images/arrow.png"></p>
-                <div>
-                <ul>
-                    <li><a href="/top">ホーム</a></li>
-                    <li><a href="/profile">プロフィール</a></li>
-                    <li><a href="/logout">ログアウト</a></li>
-                </ul>
+        <div id ="head">
+            <h1><a href="http://127.0.0.1:8000/top"><img src="images/atlas.png"></a></h1>
+            <div class="accordion">
+                <div class="accordion-container">
+                    <div class="accordion-item">
+                        <div class="accordion-title js-accordion-title">
+                            <p>〇〇さん</p>
+                            <img class="icon" src="images/icon1.png">
+                        </div>
+                        <ul class="accordion-content">
+                            <li><a href="/top">HOME</a></a></li>
+                            <li><a href="/profile">プロフィール編集</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </header>
@@ -58,7 +63,8 @@
     </div>
     <footer>
     </footer>
-    <script src="JavaScriptファイルのURL"></script>
-    <script src="JavaScriptファイルのURL"></script>
+     <!-- jQuery接続 -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>

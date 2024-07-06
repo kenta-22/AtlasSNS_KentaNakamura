@@ -1,22 +1,102 @@
 @charset "utf-8";
-html{
-}
-body{
-}
+
+html {}
+
+body {}
+
 /* header */
-header{
-    background:#186AC9;
+header {
+    background: #186AC9;
+    z-index: calc(infinity);
+}
+
+/* login.blade.php */
+#head {
+    height: 52px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+#head h1 img {
+    height: 50px;
+}
+
+.accordion {
+    width: 200px;
+}
+
+.accordion-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.icon {
+    height: 50px;
+}
+
+.accordion-content {
+    display: none;
+    background-color: #fff;
+    margin-top: 20px;
+    border: 2px, solid, #0D2879;
+}
+
+.accordion-content li a {
+    display: block;
+    font-size: 20px;
+    text-align: center;
+    color: #727272;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+}
+
+.accordion-content li a:hover {
+    background-color: #0D2879;
+    color: #fff;
+}
+
+.accordion-title {
+    position: relative;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.accordion-title::after {
+    border-right: solid 2px #fff;
+    border-top: solid 2px #fff;
+    content: "";
+    display: block;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    right: 80px;
+    top: 30%;
+    transform: rotate(135deg);
+    /*最初の矢印は下向き*/
+    transition: transform .0s ease-in-out, top .0s ease-in-out;
+}
+
+.accordion-title.open::after {
+    top: 40%;
+    /*矢印の位置を少し変える*/
+    transform: rotate(-45deg);
+    /*矢印の向きを反転*/
 }
 
 /* main content */
-#row{
+#row {
     display: flex;
     flex-flow: row wrap;
 }
-#container{
+
+#container {
     flex: 0 0 80%;
 }
-#side-bar{
+
+#side-bar {
     flex: 0 0 19%;
     border-left: 1px solid #727272;
 }
