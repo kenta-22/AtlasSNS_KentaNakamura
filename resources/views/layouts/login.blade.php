@@ -22,7 +22,9 @@
 <body>
     <header>
         <div id ="head">
-            <h1><a href="http://127.0.0.1:8000/top"><img src="images/atlas.png"></a></h1>
+            <div class="logo">
+                <a href="http://127.0.0.1:8000/top"><img src="images/atlas.png"></a>
+            </div>
             <div class="accordion">
                 <div class="accordion-container">
                     <div class="accordion-item">
@@ -47,18 +49,20 @@
         <div id="side-bar">
             <div id="confirm">
                 <p>〇〇さんの</p>
-                <div>
-                <p>フォロー数</p>
-                <p>〇〇名</p>
+                <div class="number-of-follows">
+                    <p>フォロー数</p>
+                    <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="">フォローリスト</a></p>
-                <div>
-                <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <div class="number-of-followers">
+                    <p>フォロワー数</p>
+                    <p>〇〇名</p>
                 </div>
                 <p class="btn"><a href="">フォロワーリスト</a></p>
             </div>
-            <p class="btn"><a href="">ユーザー検索</a></p>
+            <div class="user-search-container">
+                <p class="btn" id="user-search"><a href="">ユーザー検索</a></p>
+            </div>
         </div>
     </div>
     <footer>

@@ -2,66 +2,48 @@
 
 html {}
 
-body {}
+body {
+    width: 100vw;
+}
 
 /* header */
 header {
     background: #186AC9;
     z-index: calc(infinity);
+    position: fixed;
+    width: 100%;
 }
 
 /* login.blade.php */
 #head {
-    height: 52px;
-    padding: 20px;
+    height: 50px;
+    padding: 30px 0;
     display: flex;
     justify-content: space-between;
 }
 
-#head h1 img {
+.logo img {
     height: 50px;
+    margin-left: 40px;
 }
 
 .accordion {
-    width: 200px;
+    width: 300px;
+    margin-right: 40px;
 }
 
 .accordion-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-}
-
-.icon {
-    height: 50px;
-}
-
-.accordion-content {
-    display: none;
-    background-color: #fff;
-    margin-top: 20px;
-    border: 2px, solid, #0D2879;
-}
-
-.accordion-content li a {
-    display: block;
-    font-size: 20px;
-    text-align: center;
-    color: #727272;
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-}
-
-.accordion-content li a:hover {
-    background-color: #0D2879;
-    color: #fff;
-}
-
-.accordion-title {
     position: relative;
     font-size: 20px;
     color: #fff;
     cursor: pointer;
+}
+
+.accordion-title p {
+    margin-left: 40px;
 }
 
 .accordion-title::after {
@@ -72,7 +54,7 @@ header {
     height: 12px;
     width: 12px;
     position: absolute;
-    right: 80px;
+    right: 130px;
     top: 30%;
     transform: rotate(135deg);
     /*最初の矢印は下向き*/
@@ -86,17 +68,102 @@ header {
     /*矢印の向きを反転*/
 }
 
+.icon {
+    height: 50px;
+}
+
+.accordion-content {
+    display: none;
+    background-color: #fff;
+    margin-top: 30px;
+    margin-right: -40px;
+    border: 2px, solid, #0D2879;
+}
+
+.accordion-content li a {
+    display: block;
+    font-size: 23px;
+    text-align: center;
+    color: #727272;
+    padding-top: 1.8rem;
+    padding-bottom: 1.8rem;
+}
+
+.accordion-content li a:hover {
+    background-color: #0D2879;
+    color: #fff;
+}
+
 /* main content */
 #row {
     display: flex;
-    flex-flow: row wrap;
+    padding-top: 110px;
+    position: relative;
 }
 
 #container {
-    flex: 0 0 80%;
+    flex: 1;
+    border-right: 1px solid #727272;
 }
 
 #side-bar {
-    flex: 0 0 19%;
-    border-left: 1px solid #727272;
+    width: 260px;
+    height: 30vh;
+    padding: 40px;
+    position: sticky;
+    top: 110px;
+}
+
+.number-of-follows {
+    margin-top: 40px;
+}
+
+.number-of-follows p {
+    display: block;
+    float: left;
+    width: 120px;
+}
+
+.number-of-followers {
+    margin-top: 40px;
+}
+
+.number-of-followers p {
+    display: block;
+    float: left;
+    width: 120px;
+}
+
+#confirm {
+    height: 280px;
+}
+
+#confirm .btn a {
+    color: #fff;
+    display: block;
+    width: 180px;
+    background-color: #2455C7;
+    text-align: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 20px 0;
+    float: right;
+    border-radius: 10px;
+}
+
+.user-search-container {
+    border-top: 1px solid #727272;
+    margin: 0 -40px;
+}
+
+#user-search a {
+    color: #fff;
+    display: block;
+    width: 180px;
+    background-color: #2455C7;
+    text-align: center;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    margin: 30px auto;
+    border-radius: 10px;
 }
