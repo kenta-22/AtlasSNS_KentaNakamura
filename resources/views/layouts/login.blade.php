@@ -15,6 +15,8 @@
     <link rel="icon" href="画像URL" sizes="32x32" type="image/png" />
     <link rel="icon" href="画像URL" sizes="48x48" type="image/png" />
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/11efa6a52c.js" crossorigin="anonymous"></script>
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->

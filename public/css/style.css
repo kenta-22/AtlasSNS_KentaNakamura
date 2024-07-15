@@ -148,7 +148,7 @@ header {
     padding-bottom: 0.8rem;
     margin: 20px 0;
     float: right;
-    border-radius: 10px;
+    border-radius: 5px;
 }
 
 .user-search-container {
@@ -165,5 +165,48 @@ header {
     padding-top: 0.8rem;
     padding-bottom: 0.8rem;
     margin: 30px auto;
-    border-radius: 10px;
+    border-radius: 5px;
+}
+
+/* 投稿 */
+.post-make {
+    display: flex;
+    border-bottom: 5px solid #E0E0E0;
+    padding: 40px 80px;
+}
+
+.post-icon {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.post-icon-img {
+    width: 100%;
+}
+
+.post-write-form {
+    background-color: #f6f8fc;
+    border: none;
+    width: 500px;
+    height: 5rem;
+    font-size: 16px;
+    resize: none;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+.submit-btn {
+    display: inline-block;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    background: #2455c7;
+    color: #ffffff;
+    width: 50px;
+    height: 50px;
+    margin-left: auto;
+    margin-top: auto;
+    transition: .3s;
+    border: 2px solid #2455c7;
+
 }
