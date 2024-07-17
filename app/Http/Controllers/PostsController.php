@@ -18,4 +18,10 @@ class PostsController extends Controller
     public function followerList(){
         return view('follows.followerList');
     }
+
+    public function createPost(Request $request){
+        $post = $request->textarea('createPost');
+        Post::create(['post' => $post]);
+        return back();
+    }
 }
