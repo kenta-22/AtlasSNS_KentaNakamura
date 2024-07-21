@@ -31,7 +31,7 @@
                 <div class="accordion-container">
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
-                            <p>〇〇さん</p>
+                            <p>{{Auth::user()->username}}さん</p>
                             <img class="icon" src="images/icon1.png">
                         </div>
                         <ul class="accordion-content">
@@ -50,7 +50,7 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>{{Auth::user()->username}}さんの</p>
                 <div class="number-of-follows">
                     <p>フォロー数</p>
                     <p>〇〇名</p>

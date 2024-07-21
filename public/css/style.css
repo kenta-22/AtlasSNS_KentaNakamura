@@ -36,7 +36,7 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    position: relative;
+    /* position: relative; */
     font-size: 20px;
     color: #fff;
     cursor: pointer;
@@ -53,7 +53,7 @@ header {
     display: block;
     height: 12px;
     width: 12px;
-    position: absolute;
+    /* position: absolute; */
     right: 130px;
     top: 30%;
     transform: rotate(135deg);
@@ -184,13 +184,19 @@ header {
     width: 100%;
 }
 
+#post-write {
+    flex-grow: 1;
+    padding-right: 30px;
+}
+
 .post-write-form {
     background-color: #f6f8fc;
     border: none;
-    width: 500px;
     height: 5rem;
     font-size: 16px;
     resize: none;
+    max-width: 100%;
+    min-width: 100%;
     padding: 10px;
     margin-right: 10px;
 }
