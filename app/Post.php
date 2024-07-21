@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Post extends Model
 {
-    // postカラムのみ編集・更新可能
+    // 指定したカラム編集・更新可能
     protected $fillable = [
-        'post'
+        'post', 'user_id'
     ];
 
 }
