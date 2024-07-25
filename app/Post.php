@@ -11,4 +11,9 @@ class Post extends Model
         'post', 'user_id'
     ];
 
+    // リレーション定義
+    // 1対多の「1」側
+    public function user(){
+        return $this->belongsTo('App\User');
+    }
 }

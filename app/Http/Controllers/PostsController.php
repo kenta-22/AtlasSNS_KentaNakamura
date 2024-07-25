@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // Postテーブル使うよ
 use App\Post;
-
+// authも使うよ
 use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
     //
     public function index(){
-        return view('posts.index');
+        // Postモデル(postsテーブル)からレコードを取得
+        $posts = Post::get();
+        return view('posts.index', ['posts' => $posts]);
     }
 
     // フォローリスト

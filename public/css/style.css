@@ -152,7 +152,7 @@ header {
 }
 
 .user-search-container {
-    border-top: 1px solid #727272;
+    border-top: solid 1px #B6B6B6;
     margin: 0 -40px;
 }
 
@@ -171,12 +171,13 @@ header {
 /* 投稿 */
 .post-make {
     display: flex;
-    border-bottom: 5px solid #E0E0E0;
+    border-bottom: 10px solid #E0E0E0;
     padding: 40px 80px;
 }
 
 .post-icon {
-    width: 50px;
+    min-width: 50px;
+    max-width: 50px;
     margin-right: 10px;
 }
 
@@ -214,5 +215,27 @@ header {
     margin-top: auto;
     transition: .3s;
     border: 2px solid #2455c7;
+}
 
+/* 投稿一覧 */
+#posts-container {
+    display: flex;
+    padding: 20px 20px 20px 120px;
+    border-bottom: solid 1px #B6B6B6;
+}
+
+#posts {
+    margin-left: 10px;
+    flex: 1 1 auto;
+}
+
+#posts h2 {
+    font-weight: 600;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#right-column {
+    margin-left: 20px;
+    min-width: 130px;
 }
