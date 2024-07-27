@@ -25,8 +25,11 @@
   </div>
   <div id="right-column">
     <p>{{ $post->created_at->format('Y-m-d H:i') }}</p>
+    @if($post->user_id === Auth::User()->id)
     <a id="post-update-btn" href=""><i class="fa-regular fa-pen-to-square fa-2xl"></i></a>
     <a id="post-delete-btn" href=""><i class="fa-regular fa-trash-can fa-2xl"></i></a>
+    @else
+    @endif
   </div>
 </div>
 @endforeach
