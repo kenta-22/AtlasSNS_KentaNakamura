@@ -38,4 +38,10 @@ class PostsController extends Controller
 
         return back();
     }
+
+    // Post削除
+    public function deletePost($id){
+        Post::where('id', $id)->delete();
+        return back();
+    }
 }
