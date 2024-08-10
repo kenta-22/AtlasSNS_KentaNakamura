@@ -26,7 +26,7 @@
       <div id="post-content" style="white-space:pre-wrap;">{{$post->post}}</div>
     </div>
     <div id="right-column">
-      <p>{{ $post->created_at->format('Y-m-d H:i') }}</p>
+      <p>{{ $post->updated_at->format('Y-m-d H:i') }}</p>
     </div>
   </div>
   <!-- ポストのuser_idと、ログイン中のユーザのidが一致するときボタンを表示する -->
@@ -35,14 +35,15 @@
     <!-- 編集ポタン -->
     <a class="js-modal-open" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
     <!-- 削除ポタン -->
-    <a id="post-delete-btn" href="" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
+    <a id="post-delete-btn" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
   </div>
   <!-- 一致しないときは何も表示しない -->
   @else
   @endif
 </div>
 @endforeach
-
+<!-- フォーム閉じる -->
+{!!Form::close()!!}
 <!-- 編集モーダルの中身 -->
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>
@@ -52,7 +53,7 @@
     </div>
     <div class="modal-content-post">
       {!!Form::open(['url' => '/post/update'])!!}
-        {{Form::textarea('updatePost', null, ['required', 'class' => 'modal_post', 'placeholder' => '編集内容を入力してください。', 'maxlength' => '150'])}}
+        {{Form::textarea('updatePost', null, ['class' => 'modal_post', 'placeholder' => '編集内容を入力してください。', 'maxlength' => '150'])}}
         <!-- post_idを送る -->
         {{Form::hidden('modal_id', 'null', ['class' => 'modal_id'])}}
         <button type="submit" class="update-btn" value="">

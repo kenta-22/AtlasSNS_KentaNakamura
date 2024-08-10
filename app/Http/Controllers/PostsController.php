@@ -39,6 +39,18 @@ class PostsController extends Controller
         return back();
     }
 
+    // Post編集
+    public function updatePost(Request $request){
+        $post = $request->input('updatePost');
+        $modal_id = $request->input('modal_id');
+
+        Post::where('id', $modal_id)->update([
+            'post' => $post
+        ]);
+
+        return back();
+    }
+
     // Post削除
     public function deletePost($id){
         Post::where('id', $id)->delete();
