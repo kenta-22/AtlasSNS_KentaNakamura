@@ -34,10 +34,10 @@ Route::get('/top','PostsController@index');
 
 Route::get('/profile','UsersController@profile');
 
-Route::get('/search','UsersController@search');
+Route::get('/followlist','PostsController@followList');
+Route::get('/followerlist','PostsController@followerList');
 
-Route::get('/follow-list','PostsController@followList');
-Route::get('/follower-list','PostsController@followerList');
+Route::get('/users/search','UsersController@search');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 

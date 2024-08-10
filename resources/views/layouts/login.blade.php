@@ -28,14 +28,14 @@
     <header>
         <div id ="head">
             <div class="logo">
-                <a href="http://127.0.0.1:8000/top"><img src="images/atlas.png"></a>
+                <a href="http://127.0.0.1:8000/top"><img src="{{ asset('images/atlas.png') }}"></a>
             </div>
             <div class="accordion">
                 <div class="accordion-container">
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
                             <p>{{Auth::user()->username}}さん</p>
-                            <img class="icon" src="images/icon1.png">
+                            <img class="icon" src=" {{asset('images/icon1.png') }}">
                         </div>
                         <ul class="accordion-content">
                             <li><a href="/top">HOME</a></a></li>
@@ -58,15 +58,15 @@
                     <p>フォロー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="/follow-list">フォローリスト</a></p>
+                <p class="btn"><a href="/followlist">フォローリスト</a></p>
                 <div class="number-of-followers">
                     <p>フォロワー数</p>
                     <p>〇〇名</p>
                 </div>
-                <p class="btn"><a href="/follower-list">フォロワーリスト</a></p>
+                <p class="btn"><a href="/followerlist">フォロワーリスト</a></p>
             </div>
             <div class="user-search-container">
-                <p class="btn" id="user-search"><a href="/search">ユーザー検索</a></p>
+                <p class="btn" id="user-search"><a href="/users/search">ユーザー検索</a></p>
             </div>
         </div>
     </div>
