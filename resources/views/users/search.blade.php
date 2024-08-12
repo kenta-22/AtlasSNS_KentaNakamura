@@ -29,8 +29,8 @@
       </div>
     </div>
     <div class="follow-btns">
-      <a class="follow-btn" href="/users/follow">フォローする</a>
-      <a class="unfollow-btn" href="/users/unfollow">フォロー解除</a>
+      <a class="follow-btn" href="/users/{{$user->id}}/follow">フォローする</a>
+      <a class="unfollow-btn" href="/users/{{$user->id}}/unfollow">フォロー解除</a>
     </div>
   </div>
   @endif

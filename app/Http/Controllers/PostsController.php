@@ -17,16 +17,6 @@ class PostsController extends Controller
         return view('posts.index', ['posts' => $posts]);
     }
 
-    // フォローリスト
-    public function followList(){
-        return view('follows.followList');
-    }
-
-    // フォロワーリスト
-    public function followerList(){
-        return view('follows.followerList');
-    }
-
     //post投稿
     public function createPost(Request $request){
         $post = $request->input('createPost');
