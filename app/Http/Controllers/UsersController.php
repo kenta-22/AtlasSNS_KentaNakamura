@@ -34,14 +34,9 @@ class UsersController extends Controller
             $result = User::all();
         }
 
-        return view('users.search', ['users' => $result]);
-    }
-
-    public function follow(){
-
-    }
-
-    public function unfollow(){
-
+        return view('users.search', [
+            'users' => $result,
+            'word' => $search
+        ]);
     }
 }

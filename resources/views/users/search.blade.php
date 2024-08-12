@@ -8,6 +8,10 @@
   <button type="submit" class="search-btn">
     <i class="fa-solid fa-magnifying-glass fa-2xl" style="color: #fff;"></i>
   </button>
+  @isset($word)
+  <p class="search-word">検索ワード : {{ $word }}</p>
+  @else
+  @endisset
 </div>
 {!!Form::close()!!}
 <div class="search-result">
@@ -26,6 +30,7 @@
     </div>
     <div class="follow-btns">
       <a class="follow-btn" href="/users/follow">フォローする</a>
+      <a class="unfollow-btn" href="/users/unfollow">フォロー解除</a>
     </div>
   </div>
   @endif

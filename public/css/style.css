@@ -385,6 +385,11 @@ header {
     cursor: pointer;
 }
 
+.search-word {
+    display: inline-block;
+    margin-left: 50px;
+}
+
 .user-list {
     display: flex;
     flex-wrap: nowrap;
@@ -413,6 +418,18 @@ header {
 .follow-btn {
     display: block;
     background-color: #69AAF8;
+    color: #fff;
+    font-size: 13px;
+    width: 130px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}
+
+.unfollow-btn {
+    display: block;
+    background-color: #DB493E;
     color: #fff;
     font-size: 13px;
     width: 130px;
