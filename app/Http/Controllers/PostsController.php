@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
-    //
+    //ポスト一覧
     public function index(){
         // Postモデル(postsテーブル)からレコードを取得
         $posts = Post::get();

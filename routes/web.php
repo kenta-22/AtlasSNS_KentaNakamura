@@ -38,6 +38,7 @@ Route::get('/followlist','PostsController@followList');
 Route::get('/followerlist','PostsController@followerList');
 
 Route::get('/users/search','UsersController@search');
+Route::post('/users/search/result', 'UsersController@searchResult');
 
 Route::get('/logout', 'Auth\LoginController@logout');
 
@@ -46,3 +47,6 @@ Route::get('/post/{id}/delete', 'PostsController@deletePost');
 Route::post('/post/create', 'PostsController@createPost');
 
 Route::post('/post/update', 'PostsController@updatePost');
+
+Route::get('/users/follow', 'UsersController@follow');
+Route::get('/users/unfollow', 'UsersController@unfollow');
