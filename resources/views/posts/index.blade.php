@@ -16,40 +16,42 @@
 </div>
 
 <!-- 投稿一覧 -->
-@foreach ($posts as $post)
-<div id="posts-container">
-  <div class="posts-wrapper">
-    <div class="post-icon">
-      <img class="post-icon-img" src="images/icon1.png">
+<div>
+  @foreach ($posts as $post)
+  <div class="posts-container">
+    <div class="posts-wrapper">
+      <div class="post-icon">
+        <img class="post-icon-img" src="images/icon1.png">
+      </div>
+      <div id="posts">
+        <h2>{{ $post->user->username }}</h2>
+        <div id="post-content">{{$post->post}}</div>
+      </div>
+      <div id="right-column">
+        <p>{{ $post->updated_at->format('Y-m-d H:i') }}</p>
+      </div>
     </div>
-    <div id="posts">
-      <h2>{{ $post->user->username }}</h2>
-      <div id="post-content" style="white-space:pre-wrap;">{{$post->post}}</div>
+    <!-- ポストのuser_idと、ログイン中のユーザのidが一致するときボタンを表示する -->
+    @if($post->user_id === Auth::User()->id)
+    <div class="login-user-only">
+      <!-- 編集ポタン -->
+      <a class="js-modal-open" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
+      <!-- 削除ポタン -->
+      <a id="post-delete-btn" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
     </div>
-    <div id="right-column">
-      <p>{{ $post->updated_at->format('Y-m-d H:i') }}</p>
-    </div>
+    <!-- 一致しないときは何も表示しない -->
+    @else
+    @endif
   </div>
-  <!-- ポストのuser_idと、ログイン中のユーザのidが一致するときボタンを表示する -->
-  @if($post->user_id === Auth::User()->id)
-  <div class="login-user-only">
-    <!-- 編集ポタン -->
-    <a class="js-modal-open" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
-    <!-- 削除ポタン -->
-    <a id="post-delete-btn" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
-  </div>
-  <!-- 一致しないときは何も表示しない -->
-  @else
-  @endif
+  @endforeach
 </div>
-@endforeach
 <!-- フォーム閉じる -->
 {!!Form::close()!!}
 
-<div>
+<!-- <div>
   <p>post数</p>
   <p>{{ Auth::user()->posts()->get()->count() }}</p>
-</div>
+</div> -->
 
 <!-- 編集モーダルの中身 -->
 <div class="modal js-modal">

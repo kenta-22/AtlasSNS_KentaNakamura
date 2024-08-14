@@ -221,12 +221,12 @@ header {
 }
 
 /* 投稿一覧 */
-#posts-container {
+.posts-container {
     padding: 20px 20px 20px 120px;
     border-bottom: solid 1px #B6B6B6;
 }
 
-#posts-container:last-child {
+.posts-container:last-child {
     border: none;
 }
 
@@ -243,6 +243,12 @@ header {
     font-weight: 600;
     margin-top: 10px;
     margin-bottom: 10px;
+}
+
+#post-content {
+    white-space: pre-wrap;
+    line-height: 1.6rem;
+    margin-bottom: 5px;
 }
 
 #right-column {
