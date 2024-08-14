@@ -14,7 +14,7 @@ class PostsController extends Controller
     public function index(){
         // Postモデル(postsテーブル)からレコードを取得
         $posts = Post::get();
-        return view('posts.index', ['posts' => $posts]);
+        return view('posts.index', compact('posts'));
     }
 
     //post投稿
@@ -24,7 +24,10 @@ class PostsController extends Controller
 
         // dd($user_id);
 
-        Post::create(['post' => $post, 'user_id' => $user_id]);
+        Post::create([
+            'post' => $post,
+            'user_id' => $user_id
+        ]);
 
         return back();
     }
@@ -46,4 +49,5 @@ class PostsController extends Controller
         Post::where('id', $id)->delete();
         return back();
     }
+
 }

@@ -10,19 +10,38 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowsController extends Controller
 {
-    //
+    //フォローリストを表示
     public function followList(){
         return view('follows.followList');
     }
+
+    // フォロワーリストを表示
     public function followerList(){
         return view('follows.followerList');
     }
 
-    public function follow(){
+    // フォローする
+    public function follow($id){
+        $following_id = Auth::user()->id;
 
+        Follow::create([
+            'following_id' => $following_id,
+            'followed_id' => $id
+        ]);
+
+        return back();
     }
 
-    public function unfollow(){
+    // フォロー解除する
+    public function unfollow($id){
+        $following_id = Auth::user()->id;
 
+        Follow::where([
+            ['following_id', $following_id],
+            ['followed_id', $id]
+        ])->delete();
+
+        return back();
     }
+
 }

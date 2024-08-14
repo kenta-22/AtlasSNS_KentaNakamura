@@ -8,7 +8,8 @@ class Post extends Model
 {
     // 指定したカラム編集・更新可能
     protected $fillable = [
-        'post', 'user_id'
+        'post',
+        'user_id'
     ];
 
     // リレーション定義
@@ -16,4 +17,8 @@ class Post extends Model
     public function user(){
         return $this->belongsTo('App\User');
     }
+
+    // public function posts(){
+    // return $this->hasMany('App\Post');
+    // }
 }

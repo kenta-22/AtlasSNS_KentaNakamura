@@ -10,11 +10,12 @@ use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
 {
-    //
+    //プロフィールページを表示
     public function profile(){
         return view('users.profile');
     }
 
+    // ユーザー一覧
     public function search(){
         // ユーザDBから登録ユーザを取得
         $users = User::get();
@@ -24,6 +25,7 @@ class UsersController extends Controller
         return view('users.search', ['users' => $users]);
     }
 
+    // 検索機能
     public function searchResult(Request $request){
         $search = $request->input('usersSearch');
 
@@ -39,4 +41,5 @@ class UsersController extends Controller
             'word' => $search
         ]);
     }
+
 }

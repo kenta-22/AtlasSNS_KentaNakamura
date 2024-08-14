@@ -14,6 +14,7 @@
   <!-- 送信ボタン -->
   <button type="submit" class="submit-btn"><i class="fa-regular fa-paper-plane fa-lg"></i></button>
 </div>
+
 <!-- 投稿一覧 -->
 @foreach ($posts as $post)
 <div id="posts-container">
@@ -44,6 +45,12 @@
 @endforeach
 <!-- フォーム閉じる -->
 {!!Form::close()!!}
+
+<div>
+  <p>post数</p>
+  <p>{{ Auth::user()->posts()->get()->count() }}</p>
+</div>
+
 <!-- 編集モーダルの中身 -->
 <div class="modal js-modal">
   <div class="modal__bg js-modal-close"></div>

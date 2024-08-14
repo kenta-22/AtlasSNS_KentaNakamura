@@ -15,7 +15,7 @@
 </div>
 {!!Form::close()!!}
 <div class="search-result">
-  @foreach ($users as $user)
+  @foreach ($users as $user) <!-- ユーザー一覧を取得 -->
   @if($user->id === Auth::User()->id)
   @continue
   @else
@@ -29,8 +29,8 @@
       </div>
     </div>
     <div class="follow-btns">
-      <a class="follow-btn" href="/users/{{$user->id}}/follow">フォローする</a>
       <a class="unfollow-btn" href="/users/{{$user->id}}/unfollow">フォロー解除</a>
+      <a class="follow-btn" href="/users/{{$user->id}}/follow">フォローする</a>
     </div>
   </div>
   @endif
