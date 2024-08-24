@@ -62,18 +62,12 @@ class User extends Authenticatable
     }
 
     // フォローしている判定
-    public function isFollowing(){
-        $id = $this->id;
-        $isFollowing = (boolean)Auth::user()->follows()->where('following_id', $id)->first();
-
-        return $isFollowing;
+    public function isFollowing(Int $user_id){
+        return (boolean) $this->following()->where('followed_id', $user_id)->first();
     }
 
     // フォローされている判定
-    public function isFollowed(){
-        $is = $this->id;
-        $isFollowed = (boolean)Auth::user()->follows()->where('followed_id', $id)->first();
-
-        return $isFollowed;
+    public function isFollowed(Int $user_id){
+        return (boolean) $this->followed()->where('following_id', $user_id)->first();
     }
 }
