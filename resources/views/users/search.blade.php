@@ -15,7 +15,8 @@
 </div>
 {!!Form::close()!!}
 <div class="search-result">
-  @foreach ($users as $user) <!-- ユーザー一覧を取得 -->
+  <!-- ユーザー一覧を取得 -->
+  @foreach ($users as $user)
   @if($user->id === Auth::User()->id)
   @continue
   @else
@@ -30,8 +31,10 @@
     </div>
     <div class="follow-btns">
       @if(Auth::user()->isFollowing($user->id))
+      <!-- 認証ユーザが該当ユーザをフォローしているならば、フォロー解除ボタンを表示 -->
       <a class="unfollow-btn" href="/users/{{$user->id}}/unfollow">フォロー解除</a>
       @else
+      <!-- フォロしていないならば、フォローするボタンを表示 -->
       <a class="follow-btn" href="/users/{{$user->id}}/follow">フォローする</a>
       @endif
     </div>
