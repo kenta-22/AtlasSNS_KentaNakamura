@@ -4,7 +4,7 @@
 
 <div class="post-make">
   <div class="post-icon">
-    <img class="post-icon-img" src="images/icon1.png">
+    <img class="post-icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
   </div>
   <div id="post-write">
     {!!Form::open(['url' => '/post/create'])!!}
@@ -18,10 +18,12 @@
 <!-- 投稿一覧 -->
 <div>
   @foreach ($posts as $post)
+  <!-- 条件:フォローしてるユーザor自分の投稿 の場合に投稿を表示 -->
+  @if(Auth::user()->isFollowing($post->user_id) || $post->user_id === Auth::User()->id)
   <div class="posts-container">
     <div class="posts-wrapper">
       <div class="post-icon">
-        <img class="post-icon-img" src="images/icon1.png">
+        <img class="post-icon-img" src="{{ asset('images/' . $post->user->images) }}">
       </div>
       <div id="posts">
         <h2>{{ $post->user->username }}</h2>
@@ -31,7 +33,7 @@
         <p>{{ $post->updated_at->format('Y-m-d H:i') }}</p>
       </div>
     </div>
-    <!-- ポストのuser_idと、ログイン中のユーザのidが一致するときボタンを表示する -->
+    <!-- 条件:ポストのuser_idと、ログイン中のユーザのidが一致 の場合にボタンを表示 -->
     @if($post->user_id === Auth::User()->id)
     <div class="login-user-only">
       <!-- 編集ポタン -->
@@ -39,10 +41,10 @@
       <!-- 削除ポタン -->
       <a id="post-delete-btn" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
     </div>
-    <!-- 一致しないときは何も表示しない -->
-    @else
+    @else <!-- 一致しないときはボタンを表示しない -->
     @endif
   </div>
+  @endif <!-- 一致しないときは投稿を表示しない -->
   @endforeach
 </div>
 <!-- フォーム閉じる -->

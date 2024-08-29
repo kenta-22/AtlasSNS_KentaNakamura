@@ -23,7 +23,7 @@
   <div class="user-list">
     <div class="user-info">
       <div class="user-icon">
-        <img class="user-icon-img" src="{{ asset('images/icon1.png') }}">
+        <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
       </div>
       <div class="user-name">
         <h2>{{ $user->username }}</h2>
