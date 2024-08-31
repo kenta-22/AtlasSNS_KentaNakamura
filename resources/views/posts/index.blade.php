@@ -18,8 +18,6 @@
 <!-- 投稿一覧 -->
 <div>
   @foreach ($posts as $post)
-  <!-- 条件:フォローしてるユーザor自分の投稿 の場合に投稿を表示 -->
-  @if(Auth::user()->isFollowing($post->user_id) || $post->user_id === Auth::User()->id)
   <div class="posts-container">
     <div class="posts-wrapper">
       <div class="post-icon">
@@ -44,7 +42,6 @@
     @else <!-- 一致しないときはボタンを表示しない -->
     @endif
   </div>
-  @endif <!-- 一致しないときは投稿を表示しない -->
   @endforeach
 </div>
 <!-- フォーム閉じる -->

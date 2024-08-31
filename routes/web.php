@@ -45,8 +45,8 @@ Route::post('/post/create', 'PostsController@createPost');
 
 Route::post('/post/update', 'PostsController@updatePost');
 
-Route::get('/followlist','FollowsController@followList');
-Route::get('/followerlist','FollowsController@followerList');
+Route::get('/followlist','UsersController@followList');
+Route::get('/followerlist','UsersController@followerList');
 
 Route::get('/users/{id}/follow', 'FollowsController@follow');
 Route::get('/users/{id}/unfollow', 'FollowsController@unfollow');

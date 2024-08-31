@@ -12,8 +12,19 @@ class PostsController extends Controller
 {
     //ポスト一覧
     public function index(){
+        // フォローしているユーザのIDを取得
+        $following_id = Auth::user()->following()->pluck('followed_id');
+        // フォローしているユーザがいない場合は空であると指定
+        if ($following_id->isEmpty()) {
+            $following_id = [0]; // 存在しないIDを設定して、結果を空にする
+        }
+
+        // dd($following_id);
         // Postモデル(postsテーブル)からレコードを取得
-        $posts = Post::get();
+        $posts = Post::with('user')
+            ->whereIn('user_id', $following_id)
+            ->orWhere('user_id', Auth::user()->id)
+            ->get();
         return view('posts.index', compact('posts'));
     }
 

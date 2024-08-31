@@ -193,11 +193,16 @@ header {
     padding-right: 30px;
 }
 
+textarea {
+    font-family: Arial;
+}
+
 .post-write-form {
     background-color: #f6f8fc;
     border: none;
     height: 5rem;
     font-size: 16px;
+    line-height: 1.4rem;
     resize: none;
     max-width: 100%;
     min-width: 100%;
@@ -346,6 +351,7 @@ header {
     width: 94%;
     height: 180px;
     font-size: 16px;
+    line-height: 1.4rem;
 }
 
 .update-btn {

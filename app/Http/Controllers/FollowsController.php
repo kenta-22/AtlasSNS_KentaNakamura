@@ -10,16 +10,6 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowsController extends Controller
 {
-    //フォローリストを表示
-    public function followList(){
-        return view('follows.followList');
-    }
-
-    // フォロワーリストを表示
-    public function followerList(){
-        return view('follows.followerList');
-    }
-
     // フォローする
     public function follow($id){
         $following_id = Auth::user()->id;

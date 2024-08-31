@@ -15,7 +15,7 @@ class UsersController extends Controller
         return view('users.profile');
     }
 
-    // ユーザー一覧
+    // ユーザ一覧(ユーザ検索)
     public function search(){
         // ユーザDBから登録ユーザを取得
         $users = User::get();
@@ -40,6 +40,18 @@ class UsersController extends Controller
             'users' => $result,
             'word' => $search
         ]);
+    }
+
+    // ユーザ一覧(フォローリスト)
+    public function followList(){
+        $users = User::with(['following:id'] === Auth::user()->id)->get();
+        return view('follows.followList', ['users' => $users]);
+    }
+
+    // ユーザ一覧(フォロワーリスト)
+    public function followerList(){
+        $users = User::with(['followed:id'])->get();
+        return view('follows.followerList', ['users' => $users]);
     }
 
 }
