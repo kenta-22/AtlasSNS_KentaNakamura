@@ -23,10 +23,14 @@
   <div class="user-list" id="user-list-{{ $user->id }}">
     <div class="user-info">
       <div class="user-icon">
-        <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
+        <a class="profile-link" href="{{ asset('users/profile/' . $user->username) }}">
+          <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
+        </a>
       </div>
       <div class="user-name">
-        <h2>{{ $user->username }}</h2>
+        <a class="profile-link" href="{{ asset('users/profile/' . $user->username) }}">
+          <h2>{{ $user->username }}</h2>
+        </a>
       </div>
     </div>
     <div class="follow-btns">
