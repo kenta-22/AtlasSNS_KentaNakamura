@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 // Userテーブル使う宣言
 use App\User;
+// Postテーブル使う宣言
+use App\Post;
 // authも使うよ
 use Illuminate\Support\Facades\Auth;
 
@@ -44,14 +46,46 @@ class UsersController extends Controller
 
     // ユーザ一覧(フォローリスト)
     public function followList(){
-        $users = User::with(['following:id'] === Auth::user()->id)->get();
-        return view('follows.followList', ['users' => $users]);
+        // フォローしているユーザのIDを取得
+        $following_id = Auth::user()->following()->pluck('followed_id');
+        if ($following_id->isEmpty()) {
+            $following_id = [0]; // 存在しないID(0)を設定して、結果を空にする
+        }
+
+        // フォローしているユーザのIDと一致するデータをuserテーブルから取得
+        $icons = User::whereIn('id', $following_id)
+            ->get();
+
+        $posts = Post::with('user')
+            ->whereIn('user_id', $following_id) //user_idがフォローしているユーザID
+            ->orderByDesc('updated_at') //投稿が新しい順にソート
+            ->get();
+
+        // dd($posts);
+
+        return view('follows.followList', compact('icons', 'posts'));
     }
 
     // ユーザ一覧(フォロワーリスト)
     public function followerList(){
-        $users = User::with(['followed:id'])->get();
-        return view('follows.followerList', ['users' => $users]);
+        // フォロワーのIDを取得
+        $followed_id = Auth::user()->followed()->pluck('following_id');
+        // フォロワーがいない場合は空であると指定
+        if ($followed_id->isEmpty()) {
+            $followed_id = [0]; // 存在しないID(0)を設定して、結果を空にする
+        }
+
+        // フォローしているユーザのIDと一致するデータをuserテーブルから取得
+        $icons = User::whereIn('id', $followed_id)
+            ->get();
+
+        // dd($following_id);
+        // Postモデル(postsテーブル)からレコードを取得
+        $posts = Post::with('user')
+            ->whereIn('user_id', $followed_id) //user_idがフォロワーのIDの場合
+            ->orderByDesc('updated_at') //投稿が新しい順にソート
+            ->get();
+        return view('follows.followerList', compact('icons', 'posts'));
     }
 
 }

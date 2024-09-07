@@ -19,7 +19,8 @@ class FollowsController extends Controller
             'followed_id' => $id
         ]);
 
-        return back();
+        // id='user-list-(ユーザid)'の位置にリダイレクト
+        return redirect(url()->previous() . '#user-list-' . $id);
     }
 
     // フォロー解除する
@@ -31,7 +32,7 @@ class FollowsController extends Controller
             ['followed_id', $id]
         ])->delete();
 
-        return back();
+        return redirect(url()->previous() . '#user-list-' . $id);
     }
 
 }

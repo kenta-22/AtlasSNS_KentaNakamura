@@ -20,7 +20,7 @@
   @if($user->id === Auth::User()->id)
   @continue
   @else
-  <div class="user-list">
+  <div class="user-list" id="user-list-{{ $user->id }}">
     <div class="user-info">
       <div class="user-icon">
         <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
