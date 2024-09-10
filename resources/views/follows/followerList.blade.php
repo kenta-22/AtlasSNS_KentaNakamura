@@ -7,7 +7,7 @@
     <h1>フォロワーリスト</h1>
     <div class="icon-list">
       @foreach ($icons as $icon)
-      <a class="profile-link" href="{{ asset('users/profile/' . $icon->username) }}">
+      <a class="profile-link" href="{{ asset('users/profile/' . $icon->id) }}">
         <img class="icon-img" src="{{ asset('images/' . $icon->images) }}">
       </a>
       @endforeach
@@ -20,12 +20,12 @@
   <div class="posts-container">
     <div class="posts-wrapper">
       <div class="post-icon">
-        <a class="profile-link" href="{{ asset('users/profile/' . $icon->username) }}">
+        <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
           <img class="post-icon-img" src="{{ asset('images/' . $post->user->images) }}">
         </a>
       </div>
       <div id="posts">
-        <a class="profile-link" href="{{ asset('users/profile/' . $icon->username) }}">
+        <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
           <h2>{{ $post->user->username }}</h2>
         </a>
         <div id="post-content">{{ $post->post }}</div>

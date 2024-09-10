@@ -13,8 +13,15 @@ use Illuminate\Support\Facades\Auth;
 class UsersController extends Controller
 {
     //プロフィールページを表示
-    public function profile(){
-        return view('users.profile');
+    public function profile($id){
+        // dd($id);
+        $profile = User::find($id);
+
+        $posts = Post::with('user')
+            ->where('user_id', $id) //user_idが$idと一致する場合
+            ->orderByDesc('updated_at') //投稿が新しい順にソート
+            ->get();
+        return view('users.profile', compact('profile', 'posts'));
     }
 
     // ユーザ一覧(ユーザ検索)
@@ -24,7 +31,7 @@ class UsersController extends Controller
 
         // dd($users);
 
-        return view('users.search', ['users' => $users]);
+        return view('users.search', compact('users'));
     }
 
     // 検索機能

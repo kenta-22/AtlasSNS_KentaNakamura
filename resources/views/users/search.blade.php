@@ -23,12 +23,12 @@
   <div class="user-list" id="user-list-{{ $user->id }}">
     <div class="user-info">
       <div class="user-icon">
-        <a class="profile-link" href="{{ asset('users/profile/' . $user->username) }}">
+        <a class="profile-link" href="{{ asset('users/profile/' . $user->id) }}">
           <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
         </a>
       </div>
       <div class="user-name">
-        <a class="profile-link" href="{{ asset('users/profile/' . $user->username) }}">
+        <a class="profile-link" href="{{ asset('users/profile/' . $user->id) }}">
           <h2>{{ $user->username }}</h2>
         </a>
       </div>
