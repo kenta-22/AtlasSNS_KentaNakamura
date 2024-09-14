@@ -24,6 +24,12 @@ class UsersController extends Controller
         return view('users.profile', compact('profile', 'posts'));
     }
 
+    public function profileUpdate($id){
+        $profile = User::find($id);
+
+        return view('users.update', compact('profile'));
+    }
+
     // ユーザ一覧(ユーザ検索)
     public function search(){
         // ユーザDBから登録ユーザを取得
