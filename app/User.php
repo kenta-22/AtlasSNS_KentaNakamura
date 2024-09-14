@@ -65,11 +65,15 @@ class User extends Authenticatable
     // 引数に使用している「$user_id」はDI(依存性の注入)という。search.bladeから「$user->id」が渡される
     // exists()、、、存在すればtrue、しなければfalseを返す(bool型)
     public function isFollowing($user_id){
-        return $this->following()->where('followed_id', $user_id)->exists();
+        return $this->following()
+            ->where('followed_id', $user_id)
+            ->exists();
     }
 
     // フォローされている判定
     public function isFollowed($user_id){
-        return $this->followed()->where('following_id', $user_id)->exists();
+        return $this->followed()
+            ->where('following_id', $user_id)
+            ->exists();
     }
 }

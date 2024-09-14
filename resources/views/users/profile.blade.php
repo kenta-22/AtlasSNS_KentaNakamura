@@ -20,7 +20,7 @@
       @if($profile->id === Auth::User()->id)
       <!-- 認証中のユーザが自分のプロフィール画面を表示させている場合、ボタンは非表示 -->
       @else
-        @if($profile->isFollowing($profile->id))
+        @if(Auth::user()->isFollowing($profile->id))
         <!-- 該当ユーザをフォローしているならば、フォロー解除ボタンを表示 -->
         <a class="unfollow-btn" href="/users/{{$profile->id}}/unfollow">フォロー解除</a>
         @else
