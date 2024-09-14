@@ -519,3 +519,15 @@ textarea {
 .profile-list {
     min-width: 120px;
 }
+
+.profile-update-btn {
+    display: block;
+    background-color: #707070;
+    color: #fff;
+    font-size: 13px;
+    width: 130px;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+}

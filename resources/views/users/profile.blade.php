@@ -18,7 +18,8 @@
     </div>
     <div class="follow-btns">
       @if($profile->id === Auth::User()->id)
-      <!-- 認証中のユーザが自分のプロフィール画面を表示させている場合、ボタンは非表示 -->
+      <!-- 認証中のユーザが自分のプロフィール画面を表示させている場合、プロフィール編集ボタンを表示 -->
+       <a class="profile-update-btn" href="/users/profile/{{$profile->id}}/update">プロフィール編集</a>
       @else
         @if(Auth::user()->isFollowing($profile->id))
         <!-- 該当ユーザをフォローしているならば、フォロー解除ボタンを表示 -->

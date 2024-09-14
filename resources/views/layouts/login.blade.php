@@ -39,7 +39,7 @@
                         </div>
                         <ul class="accordion-content">
                             <li><a href="/top">HOME</a></a></li>
-                            <li><a href="{{ asset('users/profile/' . Auth::user()->id) }}">プロフィール編集</a></li>
+                            <li><a href="{{ asset('users/profile/' . Auth::user()->id) . '/update' }}">プロフィール編集</a></li>
                             <li><a href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
