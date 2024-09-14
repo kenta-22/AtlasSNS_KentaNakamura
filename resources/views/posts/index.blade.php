@@ -51,10 +51,6 @@
 <!-- フォーム閉じる -->
 {!!Form::close()!!}
 
-<!-- <div>
-  <p>post数</p>
-  <p>{{ Auth::user()->posts()->get()->count() }}</p>
-</div> -->
 
 <!-- 編集モーダルの中身 -->
 <div class="modal js-modal">

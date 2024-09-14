@@ -531,3 +531,36 @@ textarea {
     padding-bottom: 10px;
     border-radius: 5px;
 }
+
+.update-container {
+    padding: 40px 80px;
+}
+
+.update-wrapper {
+    display: flex;
+}
+
+.profile-icon-img {
+    width: 70px;
+    height: 70px;
+}
+
+.profile-info div {
+    margin-bottom: 20px;
+}
+
+.update-label {
+    display: inline-block;
+    width: 170px;
+    font-size: 20px;
+}
+
+.update-text {
+    width: 500px;
+    padding: 10px;
+    font-size: 20px;
+    background-color: #f6f8fc;
+    border: none;
+    border-radius: 0;
+    resize: none;
+}

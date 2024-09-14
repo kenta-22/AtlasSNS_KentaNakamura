@@ -1,7 +1,6 @@
 @extends('layouts.logout')
 
 @section('content')
-<!-- 適切なURLを入力してください -->
 <!-- フォームファサード開始。registerへフォームを送る -->
 {!! Form::open(['url' => '/register']) !!}
 
