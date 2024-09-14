@@ -8,12 +8,12 @@
     </div>
     <div class="profile-info">
       <div class="profile-username">
-        <h3>ユーザー名</h3>
+        <h3 class="profile-list">ユーザー名</h3>
         <p>{{ $profile->username }}</p>
       </div>
       <div class="profile-bio">
-        <h3>自己紹介</h3>
-        <p>{{ $profile->bio }}</p>
+        <h3 class="profile-list">自己紹介</h3>
+        <p class="profile-bio-detaile">{{ $profile->bio }}</p>
       </div>
     </div>
     <div class="follow-btns">

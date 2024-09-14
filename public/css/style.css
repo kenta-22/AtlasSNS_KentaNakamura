@@ -175,7 +175,7 @@ header {
 .post-make {
     display: flex;
     border-bottom: 10px solid #E0E0E0;
-    padding: 40px 80px;
+    padding: 40px 20px 40px 80px;
 }
 
 .post-icon {
@@ -477,4 +477,45 @@ textarea {
 .profile-link {
     text-decoration: none;
     color: #000000;
+}
+
+/* profile */
+.profile-container {
+    border-bottom: 10px solid #E0E0E0;
+    padding: 40px 20px 40px 80px;
+}
+
+.profile-wrapper {
+    display: flex;
+}
+
+.profile-wrapper h3,
+.profile-wrapper p {
+    font-size: 20px;
+    display: block;
+    margin-right: 40px;
+    text-align: justify;
+    line-height: 1.6rem;
+}
+
+.profile-wrapper .follow-btns {
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.profile-info {
+    margin-left: 20px;
+}
+
+.profile-username,
+.profile-bio {
+    display: flex;
+}
+
+.profile-bio {
+    margin-top: 1rem;
+}
+
+.profile-list {
+    min-width: 120px;
 }
