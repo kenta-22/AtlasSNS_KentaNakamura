@@ -24,10 +24,40 @@ class UsersController extends Controller
         return view('users.profile', compact('profile', 'posts'));
     }
 
+    // プロフィール編集ページ
     public function profileUpdate($id){
         $profile = User::find($id);
 
         return view('users.update', compact('profile'));
+    }
+
+    // プロフィール編集フォーム
+    public function profileUpdateConfirm(Request $request, $id){
+        // フォームから渡されるデータを同名の変数に置き換え
+        $username = $request->input('username');
+        $mail = $request->input('mail');
+        $password = $request->input('password');
+            // passwordが空なら、現在と同じデータを送る
+            if(empty($password)){
+                $password = Auth::user()->password;
+            }
+        $bio = $request->input('bio');
+        $images = $request->input('images');
+            // imagesが空なら、現在と同じデータを送る
+            if(empty($images)){
+                $images = Auth::user()->images;
+            }
+
+        //　usersテーブルの更新
+        User::where('id', $id)->update([
+            'username' => $username,
+            'mail' => $mail,
+            'password' => $password,
+            'bio' => $bio,
+            'images' => $images
+        ]);
+
+        return back();
     }
 
     // ユーザ一覧(ユーザ検索)

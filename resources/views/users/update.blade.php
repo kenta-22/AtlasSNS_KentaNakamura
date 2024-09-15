@@ -9,7 +9,7 @@
     </div>
     <div class="profile-info">
       <!-- フォームファサード開始。updateへフォームを送る -->
-      {!! Form::open(['url' => '/update/confirm', 'files' => 'true']) !!}
+      {!! Form::open(['url' => asset('users/profile/' . Auth::user()->id . '/update/confirm'), 'files' => 'true', ' enctype' =>'multipart/form-data']) !!}
 
       @if($errors->any())
       <div class="alert alert-danger">
@@ -41,11 +41,11 @@
       </div>
       <div class="update-image">
         {{ Form::label('null', 'アイコン画像',['class' => 'update-label']) }}
-        {{ Form::file('icon', old('image', $profile->image), ['class' => 'update-text']) }}
+        {{ Form::file('images', ['class' => 'update-text']) }}
       </div>
     </div>
   </div>
-  <input type = "submit" name = "submit" value = "更新">
+  <input type = "submit" class="profile-update-btn" name = "submit" value = "更新">
   {!! Form::close() !!}
 </div>
 

@@ -34,6 +34,7 @@ Route::get('/top','PostsController@index');
 
 Route::get('/users/profile/{id}','UsersController@profile');
 Route::get('/users/profile/{id}/update', 'UsersController@profileUpdate');
+Route::post('/users/profile/{id}/update/confirm', 'UsersController@profileUpdateConfirm');
 
 Route::get('/users/search','UsersController@search');
 Route::post('/users/search/result', 'UsersController@searchResult');

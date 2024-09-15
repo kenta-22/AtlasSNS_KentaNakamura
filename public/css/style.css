@@ -538,11 +538,12 @@ textarea {
 
 .update-wrapper {
     display: flex;
+    align-items: flex-start;
 }
 
 .profile-icon-img {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
 }
 
 .profile-info div {
@@ -553,6 +554,7 @@ textarea {
     display: inline-block;
     width: 170px;
     font-size: 20px;
+    margin-top: 0;
 }
 
 .update-text {
@@ -563,4 +565,18 @@ textarea {
     border: none;
     border-radius: 0;
     resize: none;
+}
+
+.profile-update-btn {
+    color: #fff;
+    display: block;
+    width: 180px;
+    background-color: #DA4A55;
+    text-align: center;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    margin: 20px auto 0 auto;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
 }

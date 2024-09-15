@@ -41,7 +41,7 @@
       <!-- 編集ポタン -->
       <a class="js-modal-open" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
       <!-- 削除ポタン -->
-      <a id="post-delete-btn" href="/post/{{$post->id}}/delete" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
+      <a id="post-delete-btn" href="{{ asset('/post/' . $post->id . '/delete') }}" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
     </div>
     @else <!-- 一致しないときはボタンを表示しない -->
     @endif
@@ -60,7 +60,7 @@
       <a class="js-modal-close" href="">✕</a>
     </div>
     <div class="modal-content-post">
-      {!!Form::open(['url' => '/post/update'])!!}
+      {!!Form::open(['url' => asset('/post/update')])!!}
         {{Form::textarea('updatePost', null, ['class' => 'modal_post', 'placeholder' => '編集内容を入力してください。', 'maxlength' => '150'])}}
         <!-- post_idを送る -->
         {{Form::hidden('modal_id', 'null', ['class' => 'modal_id'])}}
