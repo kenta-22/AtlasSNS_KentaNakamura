@@ -560,11 +560,16 @@ textarea {
 .update-text {
     width: 500px;
     padding: 10px;
-    font-size: 20px;
+    font-size: 16px;
     background-color: #f6f8fc;
     border: none;
     border-radius: 0;
     resize: none;
+}
+
+.update-text-file {
+    background-color: transparent;
+    padding-left: 0;
 }
 
 .profile-update-btn {

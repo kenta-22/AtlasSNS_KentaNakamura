@@ -33,6 +33,7 @@ class UsersController extends Controller
 
     // プロフィール編集フォーム
     public function profileUpdateConfirm(Request $request, $id){
+        // dd($request->file());
         // フォームから渡されるデータを同名の変数に置き換え
         $username = $request->input('username');
         $mail = $request->input('mail');
@@ -47,6 +48,9 @@ class UsersController extends Controller
             if(empty($images)){
                 $images = Auth::user()->images;
             }
+
+        // imageをstorageに保存
+        $request->file('images')->storeAs('public/images', 'icon' . Auth::user()->id . '.png');
 
         //　usersテーブルの更新
         User::where('id', $id)->update([

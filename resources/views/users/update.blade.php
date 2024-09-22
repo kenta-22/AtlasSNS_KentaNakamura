@@ -5,7 +5,7 @@
 <div class="update-container">
   <div class="update-wrapper">
     <div class="profile-icon">
-      <img class="profile-icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
+      <img class="profile-icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
     </div>
     <div class="profile-info">
       <!-- フォームファサード開始。updateへフォームを送る -->
@@ -29,11 +29,11 @@
       </div>
       <div class="update-pass">
         {{ Form::label('null', 'パスワード',['class' => 'update-label']) }}
-        {{ Form::password('password',['class' => 'update-text', 'placeholder' => '●●●●●●●●●']) }}
+        {{ Form::password('password',['class' => 'update-text', 'placeholder' => '入力してください']) }}
       </div>
       <div class="update-pass-conf">
         {{ Form::label('null', 'パスワード確認',['class' => 'update-label']) }}
-        {{ Form::password('password_confirmation',['class' => 'update-text', 'placeholder' => '●●●●●●●●●']) }}
+        {{ Form::password('password_confirmation',['class' => 'update-text', 'placeholder' => '入力してください（確認）']) }}
       </div>
       <div class="update-bio">
         {{ Form::label('null', '自己紹介',['class' => 'update-label']) }}
@@ -41,7 +41,7 @@
       </div>
       <div class="update-image">
         {{ Form::label('null', 'アイコン画像',['class' => 'update-label']) }}
-        {{ Form::file('images', ['class' => 'update-text']) }}
+        {{ Form::file('images', ['class' => 'update-text update-text-file']) }}
       </div>
     </div>
   </div>

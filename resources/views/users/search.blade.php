@@ -24,7 +24,7 @@
     <div class="user-info">
       <div class="user-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $user->id) }}">
-          <img class="user-icon-img" src="{{ asset('images/' . $user->images) }}">
+          <img class="user-icon-img" src="{{ asset('storage/images/' . $user->images) }}">
         </a>
       </div>
       <div class="user-name">
