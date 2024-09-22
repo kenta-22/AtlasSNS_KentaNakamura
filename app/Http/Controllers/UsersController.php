@@ -50,7 +50,11 @@ class UsersController extends Controller
             }
 
         // imageをstorageに保存
+        if(is_null($request->file('images'))){
+            // fileがnullの場合、なにもしない
+        } else {
         $request->file('images')->storeAs('public/images', 'icon' . Auth::user()->id . '.png');
+        }
 
         //　usersテーブルの更新
         User::where('id', $id)->update([
