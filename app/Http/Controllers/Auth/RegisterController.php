@@ -47,6 +47,7 @@ class RegisterController extends Controller
                 'username' => ['required', 'min:2', 'max:12'],
                 'mail' => ['required', 'min:5', 'max:40', 'unique:users,mail', 'email'],
                 'password' => ['required', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:20', 'confirmed'] //regex、、、正規表現(パターンは覚えきれなさそう)
+                // confirmedルールを適用すると、自動で「password-confirmation」フォームとの一致を確認してくれる。そのため、「password-confirmation」にバリデーションは必要ない
             ]);
 
             $username = $request->input('username');

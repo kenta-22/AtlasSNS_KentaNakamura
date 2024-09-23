@@ -42,6 +42,7 @@
       <div class="update-image">
         {{ Form::label('null', 'アイコン画像',['class' => 'update-label']) }}
         {{ Form::file('images', ['class' => 'update-text update-text-file']) }}
+        <p class="images-limit">※上限5MB</p>
       </div>
     </div>
   </div>

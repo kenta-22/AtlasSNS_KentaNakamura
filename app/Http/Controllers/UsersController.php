@@ -9,6 +9,8 @@ use App\User;
 use App\Post;
 // authも使うよ
 use Illuminate\Support\Facades\Auth;
+// hash化できるように
+use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
@@ -33,7 +35,33 @@ class UsersController extends Controller
 
     // プロフィール編集フォーム
     public function profileUpdateConfirm(Request $request, $id){
-        // dd($request->file());
+        // dd($request->all());
+
+        // バリデーション
+        $request->validate([
+            'username' => ['required', 'min:2', 'max:12'],
+            'mail' => ['required', 'min:5', 'max:40', 'unique:users,mail,' . Auth::id(), 'email'],
+            'password' => ['nullable', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:20', 'confirmed'],
+            'bio' => ['max:150'],
+            'images' => ['mimes:jpg, png, jpeg, bpm, gif, svg, heic, heif']
+        ],
+        [
+            'username.required' => 'ユーザーネームは必須です',
+            'username.min' => 'ユーザーネームは2〜12文字で作成してください',
+            'username.max' => 'ユーザーネームは2〜12文字で作成してください',
+            'mail.required' => 'メールアドレスは必須です',
+            'mail.min' => 'メールアドレスは5〜40文字で登録してください',
+            'mail.max' => 'メールアドレスは5〜40文字で登録してください',
+            'mail.unique' => 'すでに登録されているメールアドレスです<br>別のメールアドレスを登録してください',
+            'mail.email' => 'メールアドレスが不正です',
+            'password.regex' => 'パスワードには半角英数字のみを使用してください',
+            'password.min' => 'パスワードは8〜20文字で作成してください',
+            'password.max' => 'パスワードは8〜20文字で作成してください',
+            'password.confirmed' => 'パスワードが一致していません',
+            'bio.max' => '自己紹介は150文字以内で登録してください',
+            'images.mimes' => 'アイコン画像は画像形式で登録してください'
+        ]);
+
         // フォームから渡されるデータを同名の変数に置き換え
         $username = $request->input('username');
         $mail = $request->input('mail');
@@ -42,6 +70,7 @@ class UsersController extends Controller
             if(empty($password)){
                 $password = Auth::user()->password;
             }
+        $hashPassword = Hash::make($password); //パスワードをhash(暗号)化
         $bio = $request->input('bio');
         $images = $request->input('images');
             // imagesが空なら、現在と同じデータを送る
@@ -60,7 +89,7 @@ class UsersController extends Controller
         User::where('id', $id)->update([
             'username' => $username,
             'mail' => $mail,
-            'password' => $password,
+            'password' => $hashPassword,
             'bio' => $bio,
             'images' => $images
         ]);
