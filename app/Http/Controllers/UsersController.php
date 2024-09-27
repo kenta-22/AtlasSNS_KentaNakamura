@@ -44,8 +44,7 @@ class UsersController extends Controller
             'password' => ['nullable', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:20', 'confirmed'],
             'bio' => ['max:150'],
             'images' => ['mimes:jpg, png, jpeg, bpm, gif, svg, heic, heif']
-        ],
-        [
+        ], [
             'username.required' => 'ユーザーネームは必須です',
             'username.min' => 'ユーザーネームは2〜12文字で作成してください',
             'username.max' => 'ユーザーネームは2〜12文字で作成してください',

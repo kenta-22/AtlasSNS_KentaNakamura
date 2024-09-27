@@ -18,11 +18,17 @@
   <!--iphoneのアプリアイコン指定-->
   <link rel="apple-touch-icon-precomposed" href="画像のURL" />
   <!--OGPタグ/twitterカード-->
+  <!-- GoogleFonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wdth,wght@6..12,100,700&display=swap" rel="stylesheet">
 </head>
 <body>
   <header>
-    <h1><img src="images/atlas.png"></h1>
-    <p>Social Network Service</p>
+    <div class="logout-container">
+      <h1><img class="atlas-logo" src="{{ asset('storage/images/atlas.png') }}"></h1>
+      <p class="nunito-sans-text">Social Network Service</p>
+    </div>
   </header>
   <div id="container">
     @yield('content')
