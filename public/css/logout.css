@@ -16,17 +16,25 @@ html {
 }
 
 body {
-    height: 100%;
     background-image: linear-gradient(0deg, #F6E259 5%, #69AAF8 45%, #186AC9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 100vh;
 }
 
 header {
     width: 100%;
 }
 
+#container {
+    margin-top: -300px;
+}
+
 .logout-container {
     width: 500px;
-    margin: 100px auto 50px auto;
+    margin: 0 auto;
 }
 
 .logout-container h1 {
@@ -38,7 +46,7 @@ header {
     text-align: center;
     font-size: 30px;
     font-weight: 600;
-    color: white;
+    color: #fff;
 }
 
 .atlas-logo {
@@ -46,9 +54,9 @@ header {
 }
 
 .login-form-container {
-    width: 300px;
-    height: 400px;
+    width: 250px;
     margin: 0 auto;
+    padding: 40px 25px;
     /* 透明度を適用するためにrgbaでcolorを指定 */
     background-color: rgba(0, 0, 0, 0.2);
     border-radius: 10px;
@@ -58,12 +66,14 @@ header {
 .welcome {
     color: white;
     text-align: center;
-    margin: 2rem auto;
     font-size: 18px;
+    margin-bottom: 25px;
 }
 
-.login-form {
-    padding: 0 25px 0 25px;
+.label {
+    display: block;
+    margin-bottom: 5px;
+    color: #fff;
 }
 
 .input {
@@ -71,4 +81,31 @@ header {
     width: 100%;
     border: none;
     margin-bottom: 25px;
+    padding: 0.7rem;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.submit-btn {
+    color: #fff;
+    display: block;
+    width: 100px;
+    background-color: #DA4A55;
+    padding: 0.5rem;
+    margin-left: auto;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+
+.register {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.register a {
+    text-decoration: none;
+    border-bottom: solid 1px #fff;
+    color: #fff;
 }
