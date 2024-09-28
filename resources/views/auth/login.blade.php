@@ -8,11 +8,11 @@
   <p class="welcome">AtlasSNSへようこそ</p>
   <div class="login-form">
     <div class="login-form-mail form-wrapper">
-      {{ Form::label('null', 'Email', ['class' => 'label']) }}
+      {{ Form::label('null', 'メールアドレス', ['class' => 'label']) }}
       {{ Form::text('mail',null,['class' => 'input']) }}
     </div>
     <div class="login-form-pass form-wrapper">
-      {{ Form::label('null', 'Password', ['class' => 'label']) }}
+      {{ Form::label('null', 'パスワード', ['class' => 'label']) }}
       {{ Form::password('password',['class' => 'input']) }}
     </div>
   </div>
