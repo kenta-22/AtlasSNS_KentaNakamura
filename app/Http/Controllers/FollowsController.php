@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class FollowsController extends Controller
 {
+    // ログインしていないときはミドルウェアに引っかかる
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     // フォローする
     public function follow($id){
         $following_id = Auth::user()->id;

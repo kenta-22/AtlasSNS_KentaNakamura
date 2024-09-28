@@ -10,6 +10,11 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+    // ログインしていないときはミドルウェアに引っかかる
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     //ポスト一覧(index)
     public function index(){
         // フォローしているユーザのIDを取得

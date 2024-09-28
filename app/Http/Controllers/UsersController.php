@@ -14,6 +14,11 @@ use Illuminate\Support\Facades\Hash;
 
 class UsersController extends Controller
 {
+    // ログインしていないときはミドルウェアに引っかかる
+    public function __construct(){
+        $this->middleware('auth');
+    }
+
     //プロフィールページを表示
     public function profile($id){
         // dd($id);
