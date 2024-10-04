@@ -26,7 +26,7 @@
       </div>
       <div id="posts">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
-          <h2>{{ $post->user->username }}</h2>
+          <h2 class="post-username">{{ $post->user->username }}</h2>
         </a>
         <div id="post-content">{{ $post->post }}</div>
       </div>

@@ -17,30 +17,29 @@
     <link rel="icon" href="画像URL" sizes="62x62" type="image/png" />
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/11efa6a52c.js" crossorigin="anonymous"></script>
+    <!-- Bootstrap5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!--iphoneのアプリアイコン指定-->
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
-    <!-- jQuery接続 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="{{ asset('js/script.js') }}"></script>
 </head>
 <body>
     <header>
-        <div id ="head">
+        <div class="head">
             <div class="logo">
                 <a href="http://127.0.0.1:8000/top"><img src="{{ asset('storage/images/atlas.png') }}"></a>
             </div>
-            <div class="accordion">
+            <div class="accordion1">
                 <div class="accordion-container">
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
-                            <p>{{Auth::user()->username}}さん</p>
-                            <img class="icon" src=" {{ asset('storage/images/' . Auth::user()->images) }}">
+                            <p class="mb-0">{{Auth::user()->username}}　さん</p>
+                            <img class="icon-img" src=" {{ asset('storage/images/' . Auth::user()->images) }}">
                         </div>
                         <ul class="accordion-content">
-                            <li><a href="/top">HOME</a></a></li>
-                            <li><a href="{{ asset('users/profile/' . Auth::user()->id) . '/update' }}">プロフィール編集</a></li>
-                            <li><a href="/logout">ログアウト</a></li>
+                            <li><a class="text-decoration-none" href="/top">HOME</a></a></li>
+                            <li><a class="text-decoration-none" href="{{ asset('users/profile/' . Auth::user()->id) . '/update' }}">プロフィール編集</a></li>
+                            <li><a class="text-decoration-none" href="/logout">ログアウト</a></li>
                         </ul>
                     </div>
                 </div>
@@ -53,24 +52,35 @@
         </div >
         <div id="side-bar">
             <div id="confirm">
-                <p>{{Auth::user()->username}}さんの</p>
-                <div class="number-of-follows">
-                    <p>フォロー数</p>
-                    <p>{{ Auth::user()->following()->get()->count() }}名</p>
+                <div class="wrap-side">
+                    <p>{{Auth::user()->username}}さんの</p>
+                    <div class="number-of-follows">
+                        <p>フォロー数</p>
+                        <p>{{ Auth::user()->following()->get()->count() }}名</p>
+                    </div>
+                    <div class="text-end">
+                        <a class="btn btn-primary btn-custom-side" href="/followlist">フォローリスト</a>
+                    </div>
+                    <div class="number-of-followers mt-4">
+                        <p>フォロワー数</p>
+                        <p>{{ Auth::user()->followed()->get()->count() }}名</p>
+                    </div>
+                    <div class="text-end mb-8">
+                        <a class="btn btn-primary btn-custom-side" href="/followerlist">フォロワーリスト</a>
+                    </div>
                 </div>
-                <p class="btn"><a href="/followlist">フォローリスト</a></p>
-                <div class="number-of-followers">
-                    <p>フォロワー数</p>
-                    <p>{{ Auth::user()->followed()->get()->count() }}名</p>
-                </div>
-                <p class="btn"><a href="/followerlist">フォロワーリスト</a></p>
             </div>
-            <div class="user-search-container">
-                <p class="btn" id="user-search"><a href="/users/search">ユーザー検索</a></p>
+            <div class="user-search-container text-center mt-4">
+                <a class="btn btn-primary mt-4 btn-custom-side" href="/users/search">ユーザー検索</a>
             </div>
         </div>
     </div>
     <footer>
     </footer>
+    <!-- jQuery接続 -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
+    <!-- Bootstrap5 -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

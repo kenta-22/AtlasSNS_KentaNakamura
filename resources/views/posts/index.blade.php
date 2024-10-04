@@ -27,7 +27,7 @@
       </div>
       <div id="posts">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
-          <h2>{{ $post->user->username }}</h2>
+          <h2 class="post-username">{{ $post->user->username }}</h2>
         </a>
         <div id="post-content">{{$post->post}}</div>
       </div>
@@ -39,9 +39,9 @@
     @if($post->user_id === Auth::User()->id)
     <div class="login-user-only">
       <!-- 編集ポタン -->
-      <a class="js-modal-open" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
+      <a class="js-modal-open text-decoration-none" href="" post="{{$post->post}}" post_id="{{$post->id}}"><i class="fa-regular fa-pen-to-square fa-2xl" style="color: #7CCFC7;"></i></a>
       <!-- 削除ポタン -->
-      <a id="post-delete-btn" href="{{ asset('/post/' . $post->id . '/delete') }}" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
+      <a id="post-delete-btn text-decoration-none" href="{{ asset('/post/' . $post->id . '/delete') }}" onclick="return confirm('この投稿を削除します。よろしいでしょうか?')"><i class="fa-regular fa-trash-can fa-2xl"></i></a>
     </div>
     @else <!-- 一致しないときはボタンを表示しない -->
     @endif
@@ -57,7 +57,7 @@
   <div class="modal__bg js-modal-close"></div>
   <div class="modal__content">
     <div class="modal-close">
-      <a class="js-modal-close" href="">✕</a>
+      <a class="js-modal-close text-decoration-none" href="">✕</a>
     </div>
     <div class="modal-content-post">
       {!!Form::open(['url' => asset('/post/update')])!!}

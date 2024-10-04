@@ -49,14 +49,15 @@ class RegisterController extends Controller
                 'password' => ['required', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:20', 'confirmed'] //regex、、、正規表現(パターンは覚えきれなさそう)
                 // confirmedルールを適用すると、自動で「password-confirmation」フォームとの一致を確認してくれる。そのため、「password-confirmation」にバリデーションは必要ない
             ], [
-                'username.required' => 'ユーザーネームは必須です',
-                'username.min' => 'ユーザーネームは2〜12文字で作成してください',
-                'username.max' => 'ユーザーネームは2〜12文字で作成してください',
-                'mail.required' => 'メールアドレスは必須です',
+                'username.required' => 'ユーザー名を入力してください',
+                'username.min' => 'ユーザー名は2〜12文字で作成してください',
+                'username.max' => 'ユーザー名は2〜12文字で作成してください',
+                'mail.required' => 'メールアドレスを入力してください',
                 'mail.min' => 'メールアドレスは5〜40文字で登録してください',
                 'mail.max' => 'メールアドレスは5〜40文字で登録してください',
                 'mail.unique' => 'すでに登録されているメールアドレスです<br>別のメールアドレスを登録してください',
                 'mail.email' => 'メールアドレスが不正です',
+                'password.required' => 'パスワードを入力してください',
                 'password.regex' => 'パスワードには半角英数字のみを使用してください',
                 'password.min' => 'パスワードは8〜20文字で作成してください',
                 'password.max' => 'パスワードは8〜20文字で作成してください',

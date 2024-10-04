@@ -6,6 +6,7 @@ body {
     width: 100vw;
 }
 
+
 /* header */
 header {
     background: #186AC9;
@@ -15,8 +16,8 @@ header {
 }
 
 /* login.blade.php */
-#head {
-    height: 50px;
+.head {
+    height: 110px;
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
@@ -27,16 +28,17 @@ header {
     margin-left: 40px;
 }
 
-.accordion {
+.accordion1 {
     width: 300px;
     margin-right: 40px;
+    color: #186AC9;
 }
 
 .accordion-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    /* position: relative; */
+    position: relative;
     font-size: 20px;
     color: #fff;
     cursor: pointer;
@@ -53,16 +55,17 @@ header {
     display: block;
     height: 12px;
     width: 12px;
-    /* position: absolute; */
+    position: absolute;
     right: 130px;
-    top: 30%;
+    left: 220px;
+    top: 35%;
     transform: rotate(135deg);
     /*最初の矢印は下向き*/
     transition: transform .0s ease-in-out, top .0s ease-in-out;
 }
 
 .accordion-title.open::after {
-    top: 40%;
+    top: 45%;
     /*矢印の位置を少し変える*/
     transform: rotate(-45deg);
     /*矢印の向きを反転*/
@@ -78,6 +81,7 @@ header {
     margin-top: 30px;
     margin-right: -40px;
     border: 2px, solid, #0D2879;
+    padding-left: 0;
 }
 
 .accordion-content li a {
@@ -109,66 +113,38 @@ header {
 }
 
 #side-bar {
-    width: 260px;
-    height: 30vh;
-    padding: 40px;
     position: sticky;
     top: 110px;
-    z-index: 5;
+    width: 339px;
+    height: 30vh;
 }
 
-.number-of-follows {
-    margin-top: 40px;
+.wrap-side {
+    padding: 20px;
 }
 
 .number-of-follows p {
     display: block;
     float: left;
-    width: 120px;
-}
-
-.number-of-followers {
-    margin-top: 40px;
+    width: 110px;
 }
 
 .number-of-followers p {
     display: block;
     float: left;
-    width: 120px;
-}
-
-#confirm {
-    height: 280px;
-}
-
-#confirm .btn a {
-    color: #fff;
-    display: block;
-    width: 180px;
-    background-color: #2455C7;
-    text-align: center;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    margin: 20px 0;
-    float: right;
-    border-radius: 5px;
+    width: 110px;
 }
 
 .user-search-container {
     border-top: solid 1px #B6B6B6;
-    margin: 0 -40px;
 }
 
-#user-search a {
+.btn-custom-side {
+    width: 150px;
+}
+
+.btn a {
     color: #fff;
-    display: block;
-    width: 180px;
-    background-color: #2455C7;
-    text-align: center;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    margin: 30px auto;
-    border-radius: 5px;
 }
 
 /* 投稿作成 */
@@ -186,6 +162,7 @@ header {
 
 .post-icon-img {
     width: 100%;
+    border-radius: 50%;
 }
 
 #post-write {
@@ -215,14 +192,14 @@ textarea {
     border-radius: 5px;
     text-align: center;
     cursor: pointer;
-    background: #2455c7;
+    background: #0d6efd;
     color: #ffffff;
     width: 50px;
     height: 50px;
     margin-left: auto;
     margin-top: auto;
     transition: .3s;
-    border: 2px solid #2455c7;
+    border: 2px solid #0d6efd;
 }
 
 /* 投稿一覧 */
@@ -244,10 +221,9 @@ textarea {
     flex: 1 1 auto;
 }
 
-#posts h2 {
-    font-weight: 600;
+.post-username {
+    font-size: 16px;
     margin-top: 10px;
-    margin-bottom: 10px;
 }
 
 #post-content {
@@ -390,7 +366,7 @@ textarea {
     display: inline-block;
     border: none;
     border-radius: 5px;
-    background-color: #2455C7;
+    background-color: #0d6efd;
     height: 50px;
     width: 50px;
     margin-left: 10px;
@@ -425,30 +401,11 @@ textarea {
 .user-icon-img {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
 }
 
-.follow-btn {
-    display: block;
-    background-color: #69AAF8;
-    color: #fff;
-    font-size: 13px;
-    width: 130px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-}
-
-.unfollow-btn {
-    display: block;
-    background-color: #DB493E;
-    color: #fff;
-    font-size: 13px;
-    width: 130px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
+.btn-custom-search {
+    width: 150px;
 }
 
 /* フォローリスト、フォロワーリスト */
@@ -472,6 +429,7 @@ textarea {
 .icon-img {
     width: 50px;
     height: 50px;
+    border-radius: 50%;
 }
 
 .profile-link {
@@ -520,16 +478,8 @@ textarea {
     min-width: 120px;
 }
 
-.profile-update-btn {
-    display: block;
-    background-color: #707070;
-    color: #fff;
-    font-size: 13px;
-    width: 130px;
-    text-align: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
+.btn-custom-profile {
+    width: 150px;
 }
 
 .update-container {
@@ -544,10 +494,11 @@ textarea {
 .profile-icon-img {
     width: 80px;
     height: 80px;
+    border-radius: 50%;
 }
 
 .profile-info div {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .update-label {
@@ -560,6 +511,7 @@ textarea {
 .update-text {
     width: 500px;
     padding: 10px;
+    margin-top: 5px;
     font-size: 16px;
     background-color: #f6f8fc;
     border: none;
@@ -567,26 +519,27 @@ textarea {
     resize: none;
 }
 
+.update-text-bio {
+    height: 200px;
+}
+
 .update-text-file {
     background-color: transparent;
     padding-left: 0;
+    width: 510px;
 }
 
-.profile-update-btn {
-    color: #fff;
-    display: block;
-    width: 180px;
-    background-color: #DA4A55;
-    text-align: center;
-    padding-top: 17px;
-    padding-bottom: 17px;
-    margin: 20px auto 0 auto;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.btn-custom-update {
+    width: 150px;
 }
 
 .images-limit {
     margin-left: 180px;
     font-size: 16px;
+}
+
+.error-message {
+    font-size: 13px;
+    color: #E60000;
+    margin-top: 5px;
 }

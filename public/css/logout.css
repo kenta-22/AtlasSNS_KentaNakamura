@@ -9,6 +9,9 @@
         "wdth" 100,
         "YTLC" 500;
     letter-spacing: 0.05rem;
+    text-align: center;
+    font-size: 30px;
+    color: #fff;
 }
 
 html {
@@ -26,7 +29,7 @@ body {
 
 header {
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 .logout-container {
@@ -39,19 +42,12 @@ header {
     margin-bottom: 5px;
 }
 
-.logout-container p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: 600;
-    color: #fff;
-}
-
 .atlas-logo {
     width: 150px;
 }
 
 .login-form-container {
-    width: 250px;
+    width: 350px;
     margin: 0 auto;
     padding: 40px 25px;
     /* 透明度を適用するためにrgbaでcolorを指定 */
@@ -60,49 +56,60 @@ header {
     overflow: hidden;
 }
 
+.login-form-container p {
+    color: #fff;
+}
+
 .welcome {
     color: white;
     text-align: center;
     font-size: 18px;
-    margin-bottom: 25px;
 }
 
 .label {
     display: block;
     margin-bottom: 5px;
     color: #fff;
+    font-size: 13px;
+    margin-top: 10px;
 }
 
 .input {
     display: block;
     width: 100%;
     border: none;
-    margin-bottom: 20px;
     padding: 0.7rem;
     border-radius: 5px;
     font-size: 16px;
     box-sizing: border-box;
 }
 
-.submit-btn {
-    color: #fff;
-    display: block;
-    width: 100px;
-    background-color: #DA4A55;
-    padding: 0.5rem;
-    margin-left: auto;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
+.logout-btn {
+    margin-top: 20px;
 }
 
 .register {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
 }
 
 .register a {
     text-decoration: none;
     border-bottom: solid 1px #fff;
     color: #fff;
+}
+
+.error-message p {
+    color: #E60000;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+.add-text p {
+    margin-bottom: 0;
+    font-size: 18px;
+}
+
+.add-text {
+    margin-bottom: 25px;
 }

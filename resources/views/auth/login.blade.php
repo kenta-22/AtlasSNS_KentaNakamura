@@ -16,10 +16,12 @@
       {{ Form::password('password',['class' => 'input']) }}
     </div>
   </div>
-  {{ Form::submit('ログイン', ['class' => 'submit-btn']) }}
-  <p class="register">
+  <div class="text-end">
+    {{ Form::submit('ログイン', ['class' => 'btn btn-danger logout-btn']) }}
+  </div>
+  <div class="register">
     <a href="/register">新規ユーザーの方はこちら</a>
-  </p>
+  </div>
   {!! Form::close() !!}
 </div>
 @endsection
