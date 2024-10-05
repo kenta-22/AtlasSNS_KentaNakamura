@@ -10,15 +10,6 @@
     <div class="profile-info">
       <!-- フォームファサード開始。updateへフォームを送る -->
       {!! Form::open(['url' => asset('users/profile/' . Auth::user()->id . '/update/confirm'), 'files' => 'true', ' enctype' =>'multipart/form-data']) !!}
-<!--
-      @if($errors->any())
-      <div class="alert alert-danger">
-        <ul>@foreach($errors->all() as $error)
-          <li>{{ $error }}</li>
-          @endforeach
-        </ul>
-      </div>
-      @endif -->
       <div class="update-username">
         {{ Form::label('null', 'ユーザー名',['class' => 'update-label']) }}
         {{ Form::text('username',old('username', $profile->username),['class' => 'update-text']) }}
