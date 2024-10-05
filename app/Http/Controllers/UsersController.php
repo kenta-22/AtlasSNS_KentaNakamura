@@ -63,7 +63,7 @@ class UsersController extends Controller
             'password.max' => 'パスワードは8〜20文字で作成してください',
             'password.confirmed' => 'パスワードが一致していません',
             'bio.max' => '自己紹介は150文字以内で登録してください',
-            'images.mimes' => 'アイコン画像は画像形式で登録してください'
+            'images.mimes' => '他の画像形式でお試しください'
         ]);
 
         // フォームから渡されるデータを同名の変数に置き換え
