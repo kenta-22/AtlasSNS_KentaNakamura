@@ -60,7 +60,7 @@
       </div>
       <div class="update-image">
         {{ Form::label('null', 'アイコン画像',['class' => 'update-label']) }}
-        {{ Form::file('images', ['class' => 'update-text update-text-file']) }}
+        {{ Form::file('images', ['class' => 'update-text update-text-file', 'enctype' => 'multipart/form-data']) }}
 
         @if($errors->has('images'))
         <div class="error-message">
