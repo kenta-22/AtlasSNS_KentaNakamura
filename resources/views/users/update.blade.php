@@ -5,7 +5,11 @@
 <div class="update-container">
   <div class="update-wrapper">
     <div class="profile-icon">
-      <img class="profile-icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+      @if(Auth::user()->images === 'icon0.png')
+          <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
+          @else
+          <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+          @endif
     </div>
     <div class="profile-info">
       <!-- フォームファサード開始。updateへフォームを送る -->

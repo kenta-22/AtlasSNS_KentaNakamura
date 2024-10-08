@@ -89,6 +89,8 @@ class UsersController extends Controller
         $request->file('images')->storeAs('public/images', 'icon' . Auth::user()->id . '.png');
         }
 
+        dd($images);
+
         //　usersテーブルの更新
         User::where('id', $id)->update([
             'username' => $username,

@@ -4,7 +4,7 @@
 
 <div class="post-make">
   <div class="post-icon">
-    <img class="post-icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+    <img class="post-icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
   </div>
   <div id="post-write">
     {!!Form::open(['url' => '/post/create'])!!}
@@ -22,7 +22,11 @@
     <div class="posts-wrapper">
       <div class="post-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
+          @if($post->user->images === 'icon0.png')
+          <img class="post-icon-img" src="{{ asset('images/' . $post->user->images) }}">
+          @else
           <img class="post-icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
+          @endif
         </a>
       </div>
       <div id="posts">

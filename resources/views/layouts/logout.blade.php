@@ -29,7 +29,7 @@
 <body>
   <header>
     <div class="logout-container">
-      <h1><img class="atlas-logo" src="{{ asset('storage/images/atlas.png') }}"></h1>
+      <h1><img class="atlas-logo" src="{{ asset('images/atlas.png') }}"></h1>
       <p class="nunito-sans-text">Social Network Service</p>
     </div>
   </header>

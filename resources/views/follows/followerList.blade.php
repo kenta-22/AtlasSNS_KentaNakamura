@@ -21,7 +21,11 @@
     <div class="posts-wrapper">
       <div class="post-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
-          <img class="post-icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
+          @if($post->user->images === 'icon0.png')
+          <img class="icon-img" src="{{ asset('images/' . $post->user->images) }}">
+          @else
+          <img class="icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
+          @endif
         </a>
       </div>
       <div id="posts">

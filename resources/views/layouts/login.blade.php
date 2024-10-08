@@ -27,14 +27,14 @@
     <header>
         <div class="head">
             <div class="logo">
-                <a href="http://127.0.0.1:8000/top"><img src="{{ asset('storage/images/atlas.png') }}"></a>
+                <a href="http://127.0.0.1:8000/top"><img src="{{ asset('images/atlas.png') }}"></a>
             </div>
             <div class="accordion1">
                 <div class="accordion-container">
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
                             <p class="mb-0">{{Auth::user()->username}} さん</p>
-                            <img class="icon-img" src=" {{ asset('storage/images/' . Auth::user()->images) }}">
+                            <img class="icon-img" src=" {{ asset('images/' . Auth::user()->images) }}">
                         </div>
                         <ul class="accordion-content">
                             <li><a class="text-decoration-none" href="/top">HOME</a></a></li>
