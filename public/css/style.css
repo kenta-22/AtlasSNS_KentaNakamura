@@ -156,14 +156,7 @@ header {
 }
 
 .post-icon {
-    min-width: 50px;
-    max-width: 50px;
     margin-right: 10px;
-}
-
-.post-icon-img {
-    width: 100%;
-    border-radius: 50%;
 }
 
 #post-write {
@@ -220,6 +213,7 @@ textarea {
 #posts {
     margin-left: 10px;
     flex: 1 1 auto;
+    max-width: 590px;
 }
 
 .post-username {

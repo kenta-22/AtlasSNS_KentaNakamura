@@ -5,15 +5,15 @@
 <div class="post-make">
   <div class="post-icon">
     @if(Auth::user()->images === 'icon0.png')
-    <img class="post-icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
+    <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
     @else
-    <img class="post-icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+    <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
     @endif
   </div>
   <div id="post-write">
     {!!Form::open(['url' => '/post/create'])!!}
     <!-- post入力欄 -->
-    {{Form::textarea('createPost', null, ['required', 'class' => 'post-write-form', 'placeholder' => '投稿内容を入力してください。', 'maxlength' => '150'])}}
+    {{Form::textarea('createPost', null, ['class' => 'post-write-form', 'placeholder' => '投稿内容を入力してください。'])}}
   </div>
   <!-- 送信ボタン -->
   <button type="submit" class="submit-btn"><i class="fa-regular fa-paper-plane fa-lg"></i></button>
@@ -27,9 +27,9 @@
       <div class="post-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
           @if($post->user->images === 'icon0.png')
-          <img class="post-icon-img" src="{{ asset('images/' . $post->user->images) }}">
+          <img class="icon-img" src="{{ asset('images/' . $post->user->images) }}">
           @else
-          <img class="post-icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
+          <img class="icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
           @endif
         </a>
       </div>

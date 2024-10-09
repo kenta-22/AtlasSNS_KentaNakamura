@@ -36,6 +36,12 @@ class PostsController extends Controller
 
     //post投稿
     public function createPost(Request $request){
+        $request->validate([
+            'createPost' => ['required', 'max:150']
+        ], [
+            'createPost.required' => '投稿内容を入力してください',
+            'createPost.max' => '150文字以内で入力してください'
+        ]);
         $post = $request->input('createPost');
         $user_id = Auth::user()->id;
 
