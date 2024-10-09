@@ -34,7 +34,11 @@
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
                             <p class="mb-0">{{Auth::user()->username}} さん</p>
-                            <img class="icon-img" src=" {{ asset('images/' . Auth::user()->images) }}">
+                            @if(Auth::user()->images === 'icon0.png')
+                            <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
+                            @else
+                            <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+                            @endif
                         </div>
                         <ul class="accordion-content">
                             <li><a class="text-decoration-none" href="/top">HOME</a></a></li>

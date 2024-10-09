@@ -40,7 +40,7 @@ class UsersController extends Controller
 
     // プロフィール編集フォーム
     public function profileUpdateConfirm(Request $request, $id){
-        // dd($request->all());
+        // dd($request->file());
 
         // バリデーション
         $request->validate([
@@ -76,20 +76,20 @@ class UsersController extends Controller
             }
         $hashPassword = Hash::make($password); //パスワードをhash(暗号)化
         $bio = $request->input('bio');
-        $images = $request->input('images');
-            // imagesが空なら、現在と同じデータを送る
-            if(empty($images)){
-                $images = Auth::user()->images;
-            }
+        if($request->hasFile('images')){
+            // ファイルを取得
+            $file = $request->file('images');
 
-        // imageをstorageに保存
-        if(is_null($request->file('images'))){
-            // fileがnullの場合、なにもしない
-        } else {
-        $request->file('images')->storeAs('public/images', 'icon' . Auth::user()->id . '.png');
+            // ファイル名を生成
+            $images = 'icon' . Auth::user()->id . 'png';
+
+            // ファイルをフォルダに保存
+            $filePath = $file->storeAs('public/images', $images);
+        }else{
+            $images = Auth::user()->images;
         }
 
-        dd($images);
+        // dd($images);
 
         //　usersテーブルの更新
         User::where('id', $id)->update([
@@ -99,6 +99,8 @@ class UsersController extends Controller
             'bio' => $bio,
             'images' => $images
         ]);
+
+        // dd($images);
 
         return back();
     }

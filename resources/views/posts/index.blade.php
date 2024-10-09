@@ -4,7 +4,11 @@
 
 <div class="post-make">
   <div class="post-icon">
+    @if(Auth::user()->images === 'icon0.png')
     <img class="post-icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
+    @else
+    <img class="post-icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
+    @endif
   </div>
   <div id="post-write">
     {!!Form::open(['url' => '/post/create'])!!}
