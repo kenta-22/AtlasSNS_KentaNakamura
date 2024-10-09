@@ -213,7 +213,6 @@ textarea {
 #posts {
     margin-left: 10px;
     flex: 1 1 auto;
-    max-width: 590px;
 }
 
 .post-username {
@@ -229,7 +228,7 @@ textarea {
 
 #right-column {
     margin-left: 20px;
-    min-width: 130px;
+    min-width: 140px;
     position: relative;
 }
 
