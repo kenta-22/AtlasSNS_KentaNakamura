@@ -42,6 +42,7 @@ class PostsController extends Controller
             'createPost.required' => '投稿内容を入力してください',
             'createPost.max' => '150文字以内で入力してください'
         ]);
+
         $post = $request->input('createPost');
         $user_id = Auth::user()->id;
 
@@ -57,6 +58,13 @@ class PostsController extends Controller
 
     // Post編集
     public function updatePost(Request $request){
+        $request->validate([
+            'updatePost' => ['required', 'max:150']
+        ], [
+            'updatePost.required' => '投稿内容を入力してください',
+            'updatePost.max' => '150文字以内で入力してください'
+        ]);
+
         $post = $request->input('updatePost');
         $modal_id = $request->input('modal_id');
 

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-// followモデル使う
+// followテーブル使う
 use App\Follow;
+// Userテーブル使う宣言
+use App\User;
 // auth使う
 use Illuminate\Support\Facades\Auth;
 
@@ -24,20 +26,25 @@ class FollowsController extends Controller
             'followed_id' => $id
         ]);
 
-        // id='user-list-(ユーザid)'の位置にリダイレクト
-        return redirect(url()->previous() . '#user-list-' . $id);
+        $users = User::get();
+
+        return view('users.search', compact('users'));
     }
 
     // フォロー解除する
     public function unfollow($id){
         $following_id = Auth::user()->id;
 
+        // dd($following_id);
+
         Follow::where([
             ['following_id', $following_id],
             ['followed_id', $id]
         ])->delete();
 
-        return redirect(url()->previous() . '#user-list-' . $id);
+        $users = User::get();
+
+        return view('users.search', compact('users'));
     }
 
 }

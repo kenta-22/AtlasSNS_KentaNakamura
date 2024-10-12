@@ -14,6 +14,11 @@
     {!!Form::open(['url' => '/post/create'])!!}
     <!-- post入力欄 -->
     {{Form::textarea('createPost', null, ['class' => 'post-write-form', 'placeholder' => '投稿内容を入力してください。'])}}
+    @if($errors->has('createPost'))
+      <div class="error-message">
+        <p class="mb-0">{!! $errors->first('createPost') !!}</p>
+      </div>
+    @endif
   </div>
   <!-- 送信ボタン -->
   <button type="submit" class="submit-btn"><i class="fa-regular fa-paper-plane fa-lg"></i></button>
@@ -69,7 +74,12 @@
     </div>
     <div class="modal-content-post">
       {!!Form::open(['url' => asset('/post/update')])!!}
-        {{Form::textarea('updatePost', null, ['class' => 'modal_post', 'placeholder' => '編集内容を入力してください。', 'maxlength' => '150'])}}
+        {{Form::textarea('updatePost', null, ['class' => 'modal_post', 'placeholder' => '編集内容を入力してください。'])}}
+        @if($errors->has('updatePost'))
+          <div class="error-message">
+            <p class="mb-0">{!! $errors->first('updatePost') !!}</p>
+          </div>
+        @endif
         <!-- post_idを送る -->
         {{Form::hidden('modal_id', 'null', ['class' => 'modal_id'])}}
         <button type="submit" class="update-btn" value="">

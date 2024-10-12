@@ -40,10 +40,16 @@
     <div class="follow-btns">
       @if(Auth::user()->isFollowing($user->id))
       <!-- 認証ユーザが該当ユーザをフォローしているならば、フォロー解除ボタンを表示 -->
-      <a class="btn btn-danger btn-custom-search" href="/users/{{$user->id}}/unfollow">フォロー解除</a>
+      {!! Form::open(['url' => 'users/'.$user->id.'/unfollow', 'method' => 'POST']) !!}
+      @csrf
+      {{ Form::submit('フォロー解除', ['class' => 'btn btn-danger btn-custom-search']) }}
+      {!!Form::close()!!}
       @else
       <!-- フォロしていないならば、フォローするボタンを表示 -->
-      <a class="btn btn-primary btn-custom-search" href="/users/{{$user->id}}/follow">フォローする</a>
+      {!! Form::open(['url' => 'users/'.$user->id.'/follow', 'method' => 'POST']) !!}
+      @csrf
+      {{ Form::submit('フォローする', ['class' => 'btn btn-primary btn-custom-search']) }}
+      {!!Form::close()!!}
       @endif
     </div>
   </div>
