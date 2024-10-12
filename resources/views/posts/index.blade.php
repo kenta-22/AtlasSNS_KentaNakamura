@@ -75,11 +75,11 @@
     <div class="modal-content-post">
       {!!Form::open(['url' => asset('/post/update')])!!}
         {{Form::textarea('updatePost', null, ['class' => 'modal_post', 'placeholder' => '編集内容を入力してください。'])}}
-        @if($errors->has('updatePost'))
+        <!-- @if($errors->has('updatePost'))
           <div class="error-message">
             <p class="mb-0">{!! $errors->first('updatePost') !!}</p>
           </div>
-        @endif
+        @endif -->
         <!-- post_idを送る -->
         {{Form::hidden('modal_id', 'null', ['class' => 'modal_id'])}}
         <button type="submit" class="update-btn" value="">
