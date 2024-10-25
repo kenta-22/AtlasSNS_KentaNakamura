@@ -48,7 +48,7 @@ class UsersController extends Controller
             'mail' => ['required', 'min:5', 'max:40', 'unique:users,mail,' . Auth::id(), 'email'],
             'password' => ['nullable', 'regex:/^[a-zA-Z0-9]+$/', 'min:8', 'max:20', 'confirmed'],
             'bio' => ['max:150'],
-            'images' => ['mimes:jpg, png, jpeg, bpm, gif, svg, heic, heif']
+            'images' => ['mimes:jpg, png, jpeg, JPEG, bpm, gif, svg, heic, heif']
         ], [
             'username.required' => 'ユーザーネームは必須です',
             'username.min' => 'ユーザーネームは2〜12文字で作成してください',
