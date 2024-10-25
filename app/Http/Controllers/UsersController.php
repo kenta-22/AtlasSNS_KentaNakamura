@@ -81,7 +81,7 @@ class UsersController extends Controller
             $file = $request->file('images');
 
             // ファイル名を生成
-            $images = 'icon' . Auth::user()->id . 'png';
+            $images = 'icon_' . Auth::user()->id . 'png';
 
             // ファイルをフォルダに保存
             $filePath = $file->storeAs('public/images', $images);

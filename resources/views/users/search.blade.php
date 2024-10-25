@@ -24,7 +24,7 @@
     <div class="user-info">
       <div class="user-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $user->id) }}">
-          @if($user->images === 'icon0.png')
+          @if($user->images === 'icon1.png')
           <img class="icon-img" src="{{ asset('images/' . $user->images) }}">
           @else
           <img class="icon-img" src="{{ asset('storage/images/' . $user->images) }}">

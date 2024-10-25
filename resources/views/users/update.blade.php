@@ -5,7 +5,7 @@
 <div class="update-container">
   <div class="update-wrapper">
     <div class="profile-icon">
-      @if(Auth::user()->images === 'icon0.png')
+      @if(Auth::user()->images === 'icon1.png')
           <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
           @else
           <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">

@@ -8,7 +8,7 @@
     <div class="icon-list">
       @foreach ($icons as $icon)
       <a class="profile-link" href="{{ asset('users/profile/' . $icon->id) }}">
-        @if($icon->images === 'icon0.png')
+        @if($icon->images === 'icon1.png')
         <img class="icon-img" src="{{ asset('images/' . $icon->images) }}">
         @else
         <img class="icon-img" src="{{ asset('storage/images/' . $icon->images) }}">
@@ -25,7 +25,7 @@
     <div class="posts-wrapper">
       <div class="post-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
-          @if($post->user->images === 'icon0.png')
+          @if($post->user->images === 'icon1.png')
           <img class="icon-img" src="{{ asset('images/' . $post->user->images) }}">
           @else
           <img class="icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">

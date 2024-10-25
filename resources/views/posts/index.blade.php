@@ -4,7 +4,7 @@
 
 <div class="post-make">
   <div class="post-icon">
-    @if(Auth::user()->images === 'icon0.png')
+    @if(Auth::user()->images === 'icon1.png')
     <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
     @else
     <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
@@ -31,7 +31,7 @@
     <div class="posts-wrapper">
       <div class="post-icon">
         <a class="profile-link" href="{{ asset('users/profile/' . $post->user->id) }}">
-          @if($post->user->images === 'icon0.png')
+          @if($post->user->images === 'icon1.png')
           <img class="icon-img" src="{{ asset('images/' . $post->user->images) }}">
           @else
           <img class="icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">

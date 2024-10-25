@@ -5,15 +5,6 @@
 {!! Form::open(['url' => '/register']) !!}
 <div class="login-form-container">
   <p class="welcome">新規ユーザー登録</p>
-<!--
-  @if($errors->any())
-  <div class="alert alert-danger">
-    <ul>@foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-      @endforeach
-    </ul>
-  </div>
-  @endif -->
 
   <div class="login-form">
 

@@ -34,7 +34,7 @@
                     <div class="accordion-item">
                         <div class="accordion-title js-accordion-title">
                             <p class="mb-0">{{Auth::user()->username}} さん</p>
-                            @if(Auth::user()->images === 'icon0.png')
+                            @if(Auth::user()->images === 'icon1.png')
                             <img class="icon-img" src="{{ asset('images/' . Auth::user()->images) }}">
                             @else
                             <img class="icon-img" src="{{ asset('storage/images/' . Auth::user()->images) }}">
