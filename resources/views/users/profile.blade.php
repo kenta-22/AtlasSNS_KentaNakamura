@@ -38,7 +38,7 @@
   <div class="posts-container">
     <div class="posts-wrapper">
       <div class="post-icon">
-        <img class="post-icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
+        <img class="user-icon-img" src="{{ asset('storage/images/' . $post->user->images) }}">
       </div>
       <div id="posts">
         <h2 class="post-username">{{ $post->user->username }}</h2>

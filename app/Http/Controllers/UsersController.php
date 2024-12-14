@@ -107,7 +107,7 @@ class UsersController extends Controller
 
     // ユーザ一覧(ユーザ検索)
     public function search(){
-        // ユーザDBから登録ユーザを取得
+        // ユーザテーブルから登録ユーザを取得
         $users = User::get();
 
         // dd($users);

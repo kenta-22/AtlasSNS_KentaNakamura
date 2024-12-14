@@ -21,12 +21,16 @@ class FollowsController extends Controller
     public function follow($id){
         $following_id = Auth::user()->id;
 
-        Follow::create([
+        // dd($following_id);
+
+        Follow::create([ //フォローテーブルにレコードを作る
             'following_id' => $following_id,
             'followed_id' => $id
         ]);
 
-        $users = User::get();
+        $users = User::get(); //ユーザを取得し、再度ユーザ一覧画面へ返す
+
+        // dd($users);
 
         return view('users.search', compact('users'));
     }
@@ -37,7 +41,7 @@ class FollowsController extends Controller
 
         // dd($following_id);
 
-        Follow::where([
+        Follow::where([ //レコードを削除
             ['following_id', $following_id],
             ['followed_id', $id]
         ])->delete();
