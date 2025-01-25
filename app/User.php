@@ -71,6 +71,9 @@ class User extends Authenticatable
             ->where('followed_id', $user_id)
             ->exists();
     }
+    // モデルに記述する理由
+    // 役割分担→モデルはこまめに利用するメソッド
+    // 今回はビューでisfollowingを使ってる
 
     // フォローされている判定
     public function isFollowed($user_id){
