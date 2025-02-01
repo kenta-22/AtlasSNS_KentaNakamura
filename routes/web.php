@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('login');
+    return view('layouts.login');// 'resources/views/layouts/logout.blade.php' を表示
 });
 // Route::get('/home', 'HomeController@index')->name('home');
 
